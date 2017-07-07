@@ -1,0 +1,39 @@
+###########################
+# Test events
+###########################
+#Infos:
+# All (world)events after 300 are free!
+add_namespace = austria
+
+
+# Romania Focus Take states of romania
+country_event = {
+	id = austria.17
+	title = austria.17.t
+	desc = austria.17.d
+	picture = GFX_report_event_vienna_award_hungary
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = austria.17.a
+		AUS = { 
+			transfer_state = 76
+			transfer_state = 83
+			transfer_state = 84
+			transfer_state = 82
+		}
+		hidden_effect = {
+			country_event = { days = 1 id = news.354 } #news.19 is currently the Germany demand memmental Need to fix!
+		}
+	}
+	
+	option = {
+		name = austria.17.b
+		create_wargoal = {
+			type = take_state_focus
+			target = HUN
+			generator = { 76 83 84 82 }
+		}
+	}
+}

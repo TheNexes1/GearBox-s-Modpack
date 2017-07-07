@@ -1,0 +1,377 @@
+###########################
+# Political Events
+###########################
+
+add_namespace = political
+
+
+# Monarchy on the Rise
+country_event = {
+	id = political.50
+	title = political.50.t
+	desc = political.50.d
+	picture = GFX_report_event_fascist_gathering #Need new Pictures
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_government = monarchy }
+	}
+	
+	# Seek government support
+	option = {
+		name = political.50.a
+		custom_effect_tooltip = political.50.a.tt
+		clr_country_flag = monarchy_popular_movement
+		set_country_flag = monarchy_political_movement
+	}
+
+	# Seek popular support
+	option = {
+		name = political.50.b
+		custom_effect_tooltip = political.50.b.tt
+		clr_country_flag = monarchy_political_movement
+		clr_country_flag = monarchy_government_support
+		set_country_flag = monarchy_popular_movement
+	}
+}
+
+# Monarchy Sympathies in the Military
+country_event = {
+	id = political.51
+	title = political.51.t
+	desc = political.51.d
+	picture = GFX_report_event_fascist_gathering # Need new Pictures
+	
+	trigger = {
+		has_idea_with_trait = monarchist_supporter # Need to Work here
+		NOT = { has_government = monarchy }
+		NOT = { has_country_flag = monarchy_government_support }
+	}
+	
+	mean_time_to_happen = {
+		days = 500
+		modifier = {
+			factor = 0.5
+			has_country_flag = monarchy_political_movement
+		}
+	}
+	
+	option = {
+		name = political.51.a
+		custom_effect_tooltip = political.51.a.tt
+		clr_country_flag = monarchy_political_movement
+		set_country_flag = monarchy_government_support
+	}
+}
+
+# monarchist Coup d'état
+country_event = {
+	id = political.52
+	title = political.52.t
+	desc = political.52.d
+	picture = GFX_report_event_fascist_gathering
+	
+	trigger = {
+		has_idea_with_trait = monarchist_supporter
+		NOT = { has_government = monarchy }
+		has_country_flag = monarchy_government_support
+		monarchy > 0.3
+		is_major = no
+		is_puppet = no	# Thing I need to remove this
+	}
+
+	mean_time_to_happen = {
+		days = 100
+		modifier = {
+			factor = 0.5
+			monarchy > 0.4
+		}
+	}
+
+	immediate = {
+		hidden_effect = { remove_ideas = monarchy_revolutionaries }
+	}
+	
+	option = {
+		name = political.52.a
+		set_politics = {
+			ruling_party = monarchy
+			elections_allowed = no
+		}
+		add_timed_idea = { idea = reign_of_terror days = 730 } # Need to remove this too, it doesn't feel like Monarchism
+	}
+}
+
+# Civil War for monarchy
+country_event = {
+	id = political.53
+	title = political.53.t
+	desc = political.53.d
+	picture = GFX_report_event_fascist_gathering
+	
+	trigger = {
+		has_idea_with_trait = fascist_demagogue
+		NOT = { has_government = monarchy }
+		monarchy > 0.25
+	}
+
+	mean_time_to_happen = {
+		days = 365
+		modifier = {
+			factor = 0.75
+			has_country_flag = monarchy_popular_movement
+		}
+	}
+	
+	option = {
+		name = political.53.a
+		if = {
+			limit = {
+				has_government = democratic
+			}
+			if = {
+				limit = { monarchy > 0.4 }
+				start_civil_war = {
+					ruling_party = monarchy
+					ideology = democratic
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { monarchy > 0.4 } }
+				start_civil_war = {
+					ruling_party = monarchy
+					ideology = democratic
+					size = 0.7
+				}
+			}
+		}
+		limit = {
+				has_government = fascism
+			}
+			if = {
+				limit = { monarchy > 0.4 }
+				start_civil_war = {
+					ruling_party = monarchy
+					ideology = fascism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { monarchy > 0.4 } }
+				start_civil_war = {
+					ruling_party = monarchy
+					ideology = fascism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = communism
+			}
+			if = {
+				limit = { monarchy > 0.4 }
+				start_civil_war = {
+					ruling_party = monarchy
+					ideology = communism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { monarchy > 0.4 } }
+				start_civil_war = {
+					ruling_party = monarchy
+					ideology = communism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = neutrality
+			}
+			if = {
+				limit = { monarchy > 0.4 }
+				start_civil_war = {
+					ruling_party = monarchy
+					ideology = neutrality
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { monarchy > 0.4 } }
+				start_civil_war = {
+					ruling_party = monarchy
+					ideology = neutrality
+					size = 0.7
+				}
+			}
+		}
+		remove_ideas = monarchy_revolutionaries
+		add_timed_idea = { idea = reign_of_terror days = 730 }
+	}
+	option = {
+		name = political.53.b
+	}
+}
+
+# Monarchy Assault Divisions Form
+country_event = {
+	id = political.54
+	title = political.54.t
+	desc = political.54.d
+	picture = GFX_report_event_fascist_militia
+	
+	trigger = {
+		has_idea_with_trait = monarchist_supporter
+		NOT = { has_government = monarchy }
+		monarchy > 0.3
+		NOT = { has_idea = monarchy_assault_divisions }
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			OR = {
+				NOT = { tag = RAJ }
+				AND = {
+					tag = RAJ
+					is_puppet = no
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 365
+		modifier = {
+			factor = 0.5
+			has_country_flag = monarchy_popular_movement
+		}
+	}
+	
+	option = {
+		name = political.54.a
+		add_popularity = {
+			ideology = monarchy
+			popularity = 0.05
+		}
+		add_ideas = monarchy_assault_divisions
+	}
+}
+
+# The Threat of Communism
+country_event = {
+	id = political.55
+	title = political.55.t
+	desc = political.55.d
+	picture = GFX_report_event_worker_protests
+	
+	trigger = {
+		has_idea_with_trait = monarchist_supporter
+		NOT = { has_government = monarchy }
+		monarchy > 0.25
+		any_neighbor_country = {
+			has_government = communism
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 365
+		modifier = {
+			factor = 0.5
+			has_country_flag = monarchy_popular_movement
+		}
+	}
+	
+	option = {
+		name = political.55.a
+		add_popularity = {
+			ideology = monarchy
+			popularity = 0.2
+		}
+	}
+}
+
+### > 40% support
+# political.56 monarchy
+
+country_event = {
+	id = political.56
+	title = political.56.t
+	desc = political.56.d
+	picture = GFX_report_event_fascist_gathering
+
+	trigger = {
+		monarchy > 0.4
+		NOT = { has_government = monarchy }
+		NOT = { has_idea = monarchy_revolutionaries }
+		NOT = { has_idea = reign_of_terror }
+		is_puppet = no
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = {
+		name = political.56.a
+		add_political_power = -100
+		start_civil_war = {
+				ruling_party = fascism
+				ideology = monarchy
+				size = 0.5
+			}
+		add_timed_idea = { idea = reign_of_terror days = 730 }
+	}
+
+	option = {
+		name = political.56.b
+		add_timed_idea = {
+			idea = monarchy_revolutionaries
+			days = 365
+		}
+	}
+
+	option = {
+		name = political.56.c
+		ai_chance = {
+			base = 10			
+			modifier = {
+				factor = 0
+			}
+		}
+		set_politics = {
+			ruling_party = monarchy
+			elections_allowed = no
+		}
+		add_national_unity = 0.02 
+		add_timed_idea = { idea = no_parties_allowed days = 730 }
+	}
+}
+
+country_event = {
+	id = austria.110
+	title = austria.110.t
+	desc = austria.110.d
+	picture = GFX_report_event_fascist_gathering
+	
+	trigger = {
+	    tag = AUS
+	          GER = {
+	    at_peace = yes
+	    }
+	}
+	
+	mean_time_to_happen = {
+		days = 100
+		date > 1939.1.1
+	}
+
+	option = {
+		name = austria.110.a
+		add_manpower = 200
+		}
+	
+}

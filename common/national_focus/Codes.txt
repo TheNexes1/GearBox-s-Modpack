@@ -1,0 +1,343 @@
+
+		id = AUS_annex_HUN
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = AUS_start_rebuild_austria-hungary }
+		x = 10
+		y = 14
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = HUN
+					HUN = {
+						has_civil_war = no
+						OR = {
+							owns_state = 43
+							owns_state = 154
+							owns_state = 155
+						}
+					}
+				}				
+				HUN = {
+					country_event = austria.1
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						original_tag = HUN
+						has_civil_war = yes
+						OR = {
+							owns_state = 43
+							owns_state = 154
+							owns_state = 155
+						}
+					}
+				}
+				custom_effect_tooltip = austria.2.warning
+				random_other_country = {
+					limit = {
+						original_tag = HUN
+						OR = {
+							has_government = fascism
+							AND = {
+								has_government = neutrality
+								NOT = {
+									any_other_country = {
+										original_tag = HUN
+										has_government = fascism
+									}
+								}
+							}
+							NOT = {
+								any_other_country = {
+									original_tag = HUN
+									OR = {
+										has_government = fascism
+										has_government = neutrality
+									}
+								}
+							}							
+						}
+					}
+					country_event = { id = austria.2 days = 1 }
+				}
+			}
+
+			if = {
+				limit = {
+					43 = {
+						owner = {
+							NOT = {
+								tag = HUN
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 43
+			}
+			if = {
+				limit = {
+					154 = {
+						owner = {
+							NOT = {
+								tag = HUN
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 154
+			}
+			if = {
+				limit = {
+					155 = {
+						owner = {
+							NOT = {
+								tag = HUN
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 155
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_annex_CZECH
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = AUS_start_rebuild_austria-hungary }
+		x = 12
+		y = 14
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = CZE
+					CZE = {
+						has_civil_war = no
+						OR = {
+							owns_state = 73
+							owns_state = 71
+							owns_state = 664
+							owns_state = 70
+							owns_state = 72
+							owns_state = 75
+							owns_state = 74
+							owns_state = 9
+							owns_state = 69
+						}
+					}
+				}				
+				CZE = {
+					country_event = austria.11
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						original_tag = CZE
+						has_civil_war = yes
+						OR = {
+							owns_state = 73
+							owns_state = 71
+							owns_state = 664
+							owns_state = 70
+							owns_state = 72
+							owns_state = 75
+							owns_state = 74
+							owns_state = 9
+							owns_state = 69
+						}
+					}
+				}
+				custom_effect_tooltip = austria.2.warning
+				random_other_country = {
+					limit = {
+						original_tag = CZE
+						OR = {
+							has_government = fascism
+							AND = {
+								has_government = neutrality
+								NOT = {
+									any_other_country = {
+										original_tag = CZE
+										has_government = fascism
+									}
+								}
+							}
+							NOT = {
+								any_other_country = {
+									original_tag = CZE
+									OR = {
+										has_government = fascism
+										has_government = neutrality
+									}
+								}
+							}							
+						}
+					}
+					country_event = { id = austria.12 days = 1 }
+				}
+			}
+
+			if = {
+				limit = {
+					73 = {
+						owner = {
+							NOT = {
+								tag = CZE
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 73
+			}
+			###############1
+			if = {
+				limit = {
+					71 = {
+						owner = {
+							NOT = {
+								tag = CZE
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 71
+			}
+			#####################2
+			if = {
+				limit = {
+					72 = {
+						owner = {
+							NOT = {
+								tag = CZE
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 72
+			}
+			##########################3
+			if = {
+				limit = {
+					664 = {
+						owner = {
+							NOT = {
+								tag = CZE
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 664
+			}
+			#############################4
+			if = {
+				limit = {
+					70 = {
+						owner = {
+							NOT = {
+								tag = CZE
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 70
+			}
+			####################################5
+			if = {
+				limit = {
+					75 = {
+						owner = {
+							NOT = {
+								tag = CZE
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 75
+			}
+			################################6
+			if = {
+				limit = {
+					9 = {
+						owner = {
+							NOT = {
+								tag = CZE
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 9
+			}
+			################################7
+			if = {
+				limit = {
+					69 = {
+						owner = {
+							NOT = {
+								tag = CZE
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 69
+			}
+			################################8
+			if = {
+				limit = {
+					74 = {
+						owner = {
+							NOT = {
+								tag = CZE
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 74
+			}
+		}
+	}

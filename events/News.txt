@@ -1,0 +1,115 @@
+###########################
+# News Events
+###########################
+
+add_namespace = news
+
+# Annexed Hungary
+news_event = {
+	id = news.350
+	title = news.350.t
+	desc = news.350.d
+	picture = GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.350.a
+		#trigger = {
+		#	NOT = {
+		#		TAG = JAP
+		#		TAG = CHI
+		#	}
+		#}
+	}
+}
+
+# Annexed Czech
+news_event = {
+	id = news.351
+	title = news.351.t
+	desc = news.351.d
+	picture = GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.351.a
+		#trigger = {
+		#	NOT = {
+		#		TAG = JAP
+		#		TAG = CHI
+		#	}
+		#}
+	}
+}
+
+# Took States of Yugo
+news_event = {
+	id = news.352
+	title = news.352.t
+	desc = news.352.d
+	picture = GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.352.a
+		#trigger = {
+		#	NOT = {
+		#		TAG = JAP
+		#		TAG = CHI
+		#	}
+		#}
+	}
+}
+
+# Austria-Hungary took South Tyrol and Triest
+news_event = {
+	id = news.353
+	title = news.353.t
+	desc = news.353.d
+	picture = GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.353.a
+		#trigger = {
+		#	NOT = {
+		#		TAG = JAP
+		#		TAG = CHI
+		#	}
+		#}
+	}
+}
+
+# Took States of Romania
+news_event = {
+	id = news.354
+	title = news.354.t
+	desc = news.354.d
+	picture = GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.354.a
+		#trigger = {
+		#	NOT = {
+		#		TAG = JAP
+		#		TAG = CHI
+		#	}
+		#}
+	}
+}

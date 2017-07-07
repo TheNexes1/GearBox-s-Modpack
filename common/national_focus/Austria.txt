@@ -1,0 +1,2376 @@
+focus_tree = {
+	id = Austria
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = AUS
+		}
+	}
+	default = no
+
+	continuous_focus_position = { x = 50 y = 1350 }
+
+	focus = {
+		id = "A New Path"
+		icon = GFX_focus_generic_diplomatic_treaty
+		mutually_exclusive = { focus = "Alligned with Versailles" }
+		x = 7
+		y = 0
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = "Alligned with Versailles"
+		icon = GFX_goal_generic_neutrality_focus
+		mutually_exclusive = { focus = "A New Path" }
+		x = 4
+		y = 0
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5000
+		}
+
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = "Austrian Industry"
+		icon = GFX_goal_generic_construction
+		x = 0
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = "Review the Army"
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = "A New Path" focus = "Alligned with Versailles" }
+		x = 4
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+			modifier = {
+				factor = 1.2
+				is_in_faction_with = GER
+			}
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	focus = {
+		id = "Austrian Arms"
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = "Review the Army" }
+		x = 2
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = YUG_small_arms
+				bonus = 0.50
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	focus = {
+		id = "Civilian Industry I"
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = "A New Path" focus = "Alligned with Versailles" }
+		prerequisite = { focus = "Austrian Industry" }
+
+		x = -1
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 102 }
+				limit = {
+					ROOT = { has_full_control_of_state = PREV }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_owned_controlled_state = {
+				prioritize = { 107 }
+				limit = {
+					ROOT = { has_full_control_of_state = PREV }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_owned_controlled_state = {
+				prioritize = { 109 }
+				limit = {
+					ROOT = { has_full_control_of_state = PREV }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = "Military Industry I"
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = "A New Path" focus = "Alligned with Versailles" }
+		prerequisite = { focus = "Austrian Industry" }
+
+		x = 1
+		y = 2
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+		
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 653 }
+				limit = {
+					ROOT = { has_full_control_of_state = PREV }
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id ="Civilian Industry II"
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = "Civilian Industry I" }
+		mutually_exclusive = { focus = "Military Industry II" }
+		x = -1
+		y = 3
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = "Military Industry II"
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = "Military Industry I" }
+		mutually_exclusive = { focus = "Civilian Industry II" }
+		x = 1
+		y = 3
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+		
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 653 }
+				limit = {
+					ROOT = { has_full_control_of_state = PREV }
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = "Fund the Monarch Government"
+		icon = GFX_focus_rom_abdicate
+		prerequisite = { focus = "A New Path" }
+		mutually_exclusive = { focus = "Revolution of the People" focus = "The Land Of Democracy" }
+		cost = 20
+		x = 8
+		y = 2
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_popularity = {
+							ideology = monarchy
+							popularity = 0.10
+						}
+				}
+			available = {
+					NOT = {
+							has_government = monarchy
+						}
+				}
+
+	}
+	focus = {
+		id = "Revolution of the People"
+		icon = GFX_focus_generic_soviet_politics
+		prerequisite = { focus = "A New Path" }
+		mutually_exclusive = { focus = "Fund the Monarch Government" focus = "The Land Of Democracy" }
+		cost = 20
+		x = 12
+		y = 2
+			ai_will_do = {
+					factor = 10
+			}
+			completion_reward = {
+					add_popularity = {
+							ideology = communism
+							popularity = 0.10
+					}
+			}
+
+	}
+	focus = {
+		id = "Expand the University Of Vienna"
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = "Civilian Industry II" focus = "Military Industry II" }
+		
+		cost = 5
+		x = 0
+		y = 4
+			ai_will_do = {
+					factor = 10
+			}
+			completion_reward = {
+					add_research_slot = 1
+			}
+
+	}
+	focus = {
+		id = AUS_build_north-west_wall
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = AUS_fortify_alps }
+		cost = 5
+		x = 10
+		y = 4
+			ai_will_do = {
+					factor = 1
+				}
+			available = {
+					controls_state = 152
+					controls_state = 153
+					controls_state = 69
+				}
+			available_if_capitulated = no
+			cancel_if_invalid = yes
+			completion_reward = {
+					custom_effect_tooltip = AUS_fortify_norht-west_wall_tt
+					hidden_effect = {
+							152 = {
+									if = {
+											limit = {
+													is_controlled_by = AUS
+												}
+											add_building_construction = {
+													type = bunker
+													level = 2
+													province = 732
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 3
+													province = 3703
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 2
+													province = 6708
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 3
+													province = 688
+													instant_build = yes
+												}
+										}
+								}
+							153 = {
+									if = {
+											limit = {
+													is_controlled_by = AUS
+												}
+											add_building_construction = {
+													type = bunker
+													level = 4
+													province = 11634
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 2
+													province = 673
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 3
+													province = 9633
+													instant_build = yes
+												}
+										}
+								}
+							69 = {
+									if = {
+											limit = {
+													is_controlled_by = AUS
+												}
+											add_building_construction = {
+													type = bunker
+													level = 4
+													province = 5283
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 2
+													province = 7857
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 3
+													province = 9555
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 3
+													province = 424
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 3
+													province = 3585
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 3
+													province = 3418
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 3
+													province = 11432
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 3
+													province = 469
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 3
+													province = 11401
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 3
+													province = 11414
+													instant_build = yes
+												}
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = "Influence Our Neighbors"
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = "Fund the Monarch Government" }
+		cost = 10
+		x = 6
+		y = 3
+			ai_will_do = {
+					factor = 15
+				}
+			completion_reward = {
+					add_timed_idea = {
+							idea = imperial_glory
+							days = 730
+						}
+					HUN = {
+							add_timed_idea = {
+									idea = monarchy_influence
+									days = 730
+								}
+						}
+					CZE = {
+							add_timed_idea = {
+									idea = monarchy_influence
+									days = 730
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = AUS_fortify_alps
+		icon = GFX_goal_generic_construct_military
+		cost = 5
+		prerequisite = { focus = "Fund the Monarch Government" focus = "Revolution of the People" focus = "The Land Of Democracy" }
+		x = 10
+		y = 3
+			ai_will_do = {
+					factor = 1
+				}
+			available = {
+					controls_state = 153
+					controls_state = 152
+				}
+			available_if_capitulated = no
+			cancel_if_invalid = yes
+			completion_reward = {
+					custom_effect_tooltip = AUS_fortify_alps_tt
+					hidden_effect = {
+							153 = {
+									if = {
+											limit = {
+													is_controlled_by = AUS
+												}
+											add_building_construction = {
+													type = bunker
+													level = 2
+													province = 9633
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 3
+													province = 11618
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 2
+													province = 671
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 3
+													province = 668
+													instant_build = yes
+												}
+										}
+								}
+							152 = {
+									if = {
+											limit = {
+													is_controlled_by = AUS
+												}
+											add_building_construction = {
+													type = bunker
+													level = 4
+													province = 3674
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 2
+													province = 6691
+													instant_build = yes
+												}
+											add_building_construction = {
+													type = bunker
+													level = 3
+													province = 9650
+													instant_build = yes
+												}
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = "The Grössglockner Highway"
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10,00
+		prerequisite = { focus = "Fund the Monarch Government" focus = "Revolution of the People" focus = "The Land Of Democracy" }
+		x = 12
+		y = 3
+			ai_will_do = {
+					factor = 10
+				}
+			available_if_capitulated = no
+			cancel_if_invalid = yes
+			completion_reward = {
+					custom_effect_tooltip = AUS_extend_the_grossglockner_highway_tt
+					hidden_effect = {
+							155 = {
+									if = {
+											limit = {
+													is_controlled_by = AUS
+												}
+											add_building_construction = {
+													type = infrastructure
+													level = 3
+													instant_build = yes
+												}
+										}
+								}
+							154 = {
+									if = {
+											limit = {
+													is_controlled_by = AUS
+												}
+											add_building_construction = {
+													type = infrastructure
+													level = 2
+													instant_build = yes
+												}
+										}
+								}
+							43 = {
+									if = {
+											limit = {
+													is_controlled_by = AUS
+												}
+											add_building_construction = {
+													type = infrastructure
+													level = 2
+													instant_build = yes
+												}
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = "Austrian Science"
+		icon = GFX_focus_YUG_banovina_of_croatia
+		cost = 10,00
+		prerequisite = { focus = "Fund the Monarch Government" }
+		x = 8
+		y = 3
+			completion_reward = {
+					AUS = {
+							add_ideas = austrian_scientist
+							#add_ideas = compulsory_military_service
+							add_tech_bonus = {
+									name = infantry_weapons_bonus
+									bonus = 0.5
+									uses = 2
+									category = infantry_weapons
+									category = artillery
+									category = armor
+								}
+						}
+					HUN = {
+							add_ideas = austrian_scientist
+							add_tech_bonus = {
+									name = infantry_weapons_bonus
+									bonus = 0.5
+									uses = 2
+									category = infantry_weapons
+									category = artillery
+									category = armor
+								}
+						}
+					CZE = {
+							add_ideas = austrian_scientist
+							add_tech_bonus = {
+									name = infantry_weapons_bonus
+									bonus = 0.5
+									uses = 2
+									category = infantry_weapons
+									category = artillery
+									category = armor
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = "Unite the Cultures!"
+		icon = GFX_goal_generic_national_unity
+		cost = 10,00
+		prerequisite = { focus = "Austrian Science"	}
+		x = 6
+		y = 5
+			ai_will_do = {
+					factor = 5
+				}
+			completion_reward = {
+					add_political_power = -75
+					AUS = {
+							add_ideas = united_culture
+						}
+					HUN = {
+							add_ideas = united_culture
+						}
+					CZE = {
+							add_ideas = united_culture
+						}
+				}
+
+	}
+	focus = {
+		id = "Fund the University Of Salzburg"
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = "Austrian Science" focus = "Mutual Economic Aid" focus = "Form the Peasant Council" focus = "Join the Allies" focus = "Faction Of Peace" }
+		
+		cost = 5
+		x = 8
+		y = 5
+			ai_will_do = {
+					factor = 10
+			}
+			completion_reward = {
+					add_research_slot = 1
+			}
+
+	}
+	focus = {
+		id = "Reorganize the Military"
+		icon = GFX_focus_generic_little_entente
+		cost = 10
+		prerequisite = { focus = "Austrian Science"	}
+		x = 4
+		y = 5
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_political_power = -75
+					AUS = {
+							add_ideas = compulsory_military_service
+							add_ideas = reorg_military
+						}
+					HUN = {
+							add_ideas = compulsory_military_service
+							add_ideas = reorg_military
+						}
+					CZE = {
+							add_ideas = compulsory_military_service
+							add_ideas = reorg_military
+						}
+				}
+
+	}
+	focus = {
+		id = "Form the Empire!"
+		icon = GFX_focus_generic_military_mission
+		cost = 10,00
+		prerequisite = { focus = "Unite the Cultures!" }
+		prerequisite = { focus = "Reorganize the Military" }
+		prerequisite = { focus = "Fund the University Of Salzburg" }
+		x = 8
+		y = 6
+			ai_will_do = {
+					factor = 5###Annex HUN
+				}
+			completion_reward = {
+					add_popularity = {
+							ideology = monarchy
+							popularity = 0.45
+						}
+					if = {
+							limit = {
+									country_exists = HUN
+									HUN = {
+											has_civil_war = no
+											OR = {
+													owns_state = 43
+													owns_state = 154
+													owns_state = 155
+												}
+										}
+								}
+							HUN = {
+									country_event = austria.1
+								}
+						}
+					if = {
+							limit = {
+									any_other_country = {
+											original_tag = HUN
+											has_civil_war = yes
+											OR = {
+													owns_state = 43
+													owns_state = 154
+													owns_state = 155
+												}
+										}
+								}
+							custom_effect_tooltip = austria.2.warning
+							random_other_country = {
+									limit = {
+											original_tag = HUN
+											OR = {
+													has_government = fascism
+													AND = {
+															has_government = neutrality
+															NOT = {
+																	any_other_country = {
+																			original_tag = HUN
+																			has_government = fascism
+																		}
+																}
+														}
+													NOT = {
+															any_other_country = {
+																	original_tag = HUN
+																	OR = {
+																			has_government = fascism
+																			has_government = neutrality
+																		}
+																}
+														}
+												}
+										}
+									country_event = {
+											id = austria.2
+											days = 1
+										}
+								}
+						}
+					if = {
+							limit = {
+									43 = {
+											owner = {
+													NOT = {
+															tag = HUN
+														}
+													NOT = {
+															is_in_faction_with = ROOT
+														}
+												}
+										}
+								}
+							add_state_core = 43
+						}
+					if = {
+							limit = {
+									154 = {
+											owner = {
+													NOT = {
+															tag = HUN
+														}
+													NOT = {
+															is_in_faction_with = ROOT
+														}
+												}
+										}
+								}
+							add_state_core = 154
+						}
+					if = {
+							limit = {
+									155 = {
+											owner = {
+													NOT = {
+															tag = HUN
+														}
+													NOT = {
+															is_in_faction_with = ROOT
+														}
+												}
+										}
+								}
+							#Annex Czech
+							add_state_core = 155
+						}
+					if = {
+							limit = {
+									country_exists = CZE
+									CZE = {
+											has_civil_war = no
+											OR = {
+													owns_state = 73
+													owns_state = 71
+													owns_state = 664
+													owns_state = 70
+													owns_state = 72
+													owns_state = 75
+													owns_state = 74
+													owns_state = 9
+													owns_state = 69
+												}
+										}
+								}
+							CZE = {
+									country_event = austria.11
+								}
+						}
+					if = {
+							limit = {
+									any_other_country = {
+											original_tag = CZE
+											has_civil_war = yes
+											OR = {
+													owns_state = 73
+													owns_state = 71
+													owns_state = 664
+													owns_state = 70
+													owns_state = 72
+													owns_state = 75
+													owns_state = 74
+													owns_state = 9
+													owns_state = 69
+												}
+										}
+								}
+							custom_effect_tooltip = austria.2.warning
+							random_other_country = {
+									limit = {
+											original_tag = CZE
+											OR = {
+													has_government = fascism
+													AND = {
+															has_government = neutrality
+															NOT = {
+																	any_other_country = {
+																			original_tag = CZE
+																			has_government = fascism
+																		}
+																}
+														}
+													NOT = {
+															any_other_country = {
+																	original_tag = CZE
+																	OR = {
+																			has_government = fascism
+																			has_government = neutrality
+																		}
+																}
+														}
+												}
+										}
+									country_event = {
+											id = austria.12
+											days = 1
+										}
+								}
+						}
+					if = {
+							limit = {
+									73 = {
+											owner = {
+													NOT = {
+															tag = CZE
+														}
+													NOT = {
+															is_in_faction_with = ROOT###############1
+														}
+												}
+										}
+								}
+							add_state_core = 73
+						}
+					if = {
+							limit = {
+									71 = {
+											owner = {
+													NOT = {
+															tag = CZE
+														}
+													NOT = {
+															is_in_faction_with = ROOT#####################2
+														}
+												}
+										}
+								}
+							add_state_core = 71
+						}
+					if = {
+							limit = {
+									72 = {
+											owner = {
+													NOT = {
+															tag = CZE
+														}
+													NOT = {
+															is_in_faction_with = ROOT##########################3
+														}
+												}
+										}
+								}
+							add_state_core = 72
+						}
+					if = {
+							limit = {
+									664 = {
+											owner = {
+													NOT = {
+															tag = CZE
+														}
+													NOT = {
+															is_in_faction_with = ROOT#############################4
+														}
+												}
+										}
+								}
+							add_state_core = 664
+						}
+					if = {
+							limit = {
+									70 = {
+											owner = {
+													NOT = {
+															tag = CZE
+														}
+													NOT = {
+															is_in_faction_with = ROOT####################################5
+														}
+												}
+										}
+								}
+							add_state_core = 70
+						}
+					if = {
+							limit = {
+									75 = {
+											owner = {
+													NOT = {
+															tag = CZE
+														}
+													NOT = {
+															is_in_faction_with = ROOT################################6
+														}
+												}
+										}
+								}
+							add_state_core = 75
+						}
+					if = {
+							limit = {
+									9 = {
+											owner = {
+													NOT = {
+															tag = CZE
+														}
+													NOT = {
+															is_in_faction_with = ROOT################################7
+														}
+												}
+										}
+								}
+							add_state_core = 9
+						}
+					if = {
+							limit = {
+									69 = {
+											owner = {
+													NOT = {
+															tag = CZE
+														}
+													NOT = {
+															is_in_faction_with = ROOT################################8
+														}
+												}
+										}
+								}
+							###Annex HUN
+							#Annex Czech
+							###############1
+							#####################2
+							##########################3
+							#############################4
+							####################################5
+							################################6
+							################################7
+							add_state_core = 69
+						}
+					################################8
+					if = {
+							limit = {
+									74 = {
+											owner = {
+													NOT = {
+															tag = CZE
+														}
+													NOT = {
+															is_in_faction_with = ROOT
+														}
+												}
+										}
+								}
+							add_state_core = 74
+						}
+				}
+
+	}
+	focus = {
+		id = "Form the Peasant Council"
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = "Revolution of the People" }
+		x = 13
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = YUG_idea_peasant_councils
+		}
+	}
+	focus = {
+		id = "Mutual Economic Aid"
+		icon = GFX_goal_generic_soviet_construction
+		prerequisite = { focus = "Revolution of the People" }
+		x = 15
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		available = {
+			SOV = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+				has_capitulated = no
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_timed_idea = { idea = austrian_economy_boost days = 365 }
+			SOV = {
+				add_timed_idea = { idea = austrian_economy_boost days = 365 }
+			}
+		}
+	}
+	focus = {
+		id = "Join the Comintern"
+		icon = GFX_focus_generic_join_comintern
+		prerequisite = { focus = "Mutual Economic Aid" focus = "Form the Peasant Council" }
+		mutually_exclusive = { focus = "Our own Path to the Revolution" }
+		x = 13
+		y = 5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		available = {
+			SOV = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+				has_capitulated = no
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			SOV = {
+				country_event = generic.2
+			}
+		}
+	}
+	focus = {
+		id = "Our own Path to the Revolution"
+		icon = GFX_goal_tfv_burn_the_royal_portraits
+		prerequisite = { focus = "Mutual Economic Aid" focus = "Form the Peasant Council" }
+		mutually_exclusive = { focus = "Join the Comintern" }
+		x = 15
+		y = 5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		available = {
+			SOV = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+				has_capitulated = no
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			create_faction = "Austrian Pact Of Vienna"
+		}
+	}
+	focus = {
+		id = "The Land Of Democracy"
+		icon = GFX_focus_generic_air_defense
+		prerequisite = { focus = "Alligned with Versailles" }
+		mutually_exclusive = { focus = "Fund the Monarch Government" focus = "Revolution of the People" }
+		cost = 20
+		x = 19
+		y = 2
+			ai_will_do = {
+					factor = 10
+			}
+			completion_reward = {
+					add_popularity = {
+							ideology = democratic
+							popularity = 0.10
+					}
+			}
+
+	}
+	focus = {
+		id = "Strengthen Our Government"
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = "The Land Of Democracy" }
+		cost = 5
+		x = 17
+		y = 3
+			ai_will_do = {
+					factor = 10
+			}
+			completion_reward = {
+					add_popularity = {
+							ideology = democratic
+							popularity = 0.05
+					}
+				    add_timed_idea = {
+				        idea = FRA_strengthen_government_support_focus
+				        days = 365
+			        }
+			}
+
+	}
+	focus = {
+		id = "Join the Allies"
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = "The Land Of Democracy" }
+		mutually_exclusive = { focus = "Faction Of Peace" }
+		cost = 10
+		x = 18
+		y = 4
+			ai_will_do = {
+					factor = 10
+			}
+			completion_reward = {
+					ENG = { country_event = generic.2 }
+			}
+
+	}
+	focus = {
+		id = "Faction Of Peace"
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = "The Land Of Democracy" }
+		mutually_exclusive = { focus = "Join The Allies" }
+		cost = 10
+		x = 20
+		y = 4
+			ai_will_do = {
+					factor = 10
+			}
+			completion_reward = {
+					create_faction = "Danubian Federation"
+			}
+
+	}
+	focus = {	
+		id = "Invite Switzerland"
+		icon = GFX_goal_generic_alliance
+		prerequisite = { focus = "Faction Of Peace" }
+		cost = 10
+		x = 19
+		y = 5
+
+		available = {
+			SWI = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+				is_puppet = no
+				is_in_faction = no
+			}
+		}
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+				SWI = {
+				country_event = generic.5
+			}
+		}
+	}
+	focus = {	
+		id = "Invite Yugoslavia"
+		icon = GFX_goal_generic_alliance
+		prerequisite = { focus = "Faction Of Peace" }
+		cost = 10
+		x = 21
+		y = 5
+
+		available = {
+			YUG = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+				is_puppet = no
+				is_in_faction = no
+			}
+		}
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+				YUG = {
+				country_event = generic.5
+			}
+		}
+	}
+	focus = {
+		id = "Counter Enemy Tanks"
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = "Austrian Arms" }
+		x = 3
+		y = 6
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = YUG_anti_tank_defenses
+				bonus = 0.75
+				uses = 2
+				category = cat_anti_tank
+			}
+		}
+	}
+	focus = {
+		id = "Modernizing the Tanks"
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = "Austrian Arms" }
+		x = 1
+		y = 6
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				factor = 3
+				is_in_faction_with = GER
+			}
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = YUG_modern_tanks
+				bonus = 0.95
+				uses = 2
+				category = armor
+			}
+		}
+	}
+	focus = {
+		id = "The Austrian Airforce"
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = "Austrian Arms" }
+		x = -1
+		y = 6
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = HUN_ik3_bonus
+				bonus = 0.75
+				ahead_reduction = 0.75
+				uses = 2
+				category = light_fighter
+			}
+		}
+	}
+	focus = {	
+		id = "Invite Switzerland"
+		icon = GFX_goal_generic_alliance
+		prerequisite = { focus = "Our own Path to the Revolution" }
+		cost = 15
+		x = 14
+		y = 6
+
+		available = {
+			SWI = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+				is_puppet = no
+				is_in_faction = no
+			}
+		}
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+				SWI = {
+				country_event = generic.5
+			}
+		}
+	}
+	focus = {	
+		id = "Invite Yugoslavia"
+		icon = GFX_goal_generic_alliance
+		prerequisite = { focus = "Our own Path to the Revolution" }
+		cost = 15
+		x = 16
+		y = 6
+
+		available = {
+			YUG = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+				is_puppet = no
+				is_in_faction = no
+			}
+		}
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+				YUG = {
+				country_event = generic.5
+			}
+		}
+	}
+	focus = {	
+		id = "Austrian Steel"
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = "Austrian Industry" }
+		cost = 10
+		x = 0
+		y = 1
+
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+				    743 = {
+				        add_resource = {
+					    type = steel
+					    amount = 38
+				        }
+			        }
+		}
+	}
+	focus = {
+		id = "Our Land In Romania"
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = "Form the Empire!" }
+		x = 6
+		y = 7
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_state_claim = 76
+			add_state_claim = 84
+			add_state_claim = 81
+			add_state_claim = 82
+			add_state_claim = 83
+		}
+	}
+	focus = {
+		id = "The Slavic Land"
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 10
+		prerequisite = { focus = "Form the Empire!" }
+		x = 10
+		y = 7
+			available = {
+					has_army_manpower = {
+							size > 99999
+						}
+				}
+			bypass = {
+					102 = {
+							is_owned_by = AUS
+						}
+					103 = {
+							is_owned_by = AUS
+						}
+					104 = {
+							is_owned_by = AUS
+						}
+					109 = {
+							is_owned_by = AUS
+						}
+					45 = {
+							is_owned_by = AUS
+						}
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_state_core = 45
+					add_state_core = 102
+					add_state_core = 103
+					add_state_core = 104
+					add_state_core = 109
+					if = {
+							limit = {
+									YUG = {
+											owns_state = 45
+											owns_state = 102
+											owns_state = 103
+											owns_state = 104
+											owns_state = 109
+											controls_state = 45
+											controls_state = 102
+											controls_state = 103
+											controls_state = 104
+											controls_state = 109
+										}
+								}
+							YUG = {
+									country_event = {
+											id = austria.5
+										}
+								}
+						}
+				}
+
+	}
+	focus = {	
+		id = "Austro-Hungarian Diplomacy"
+		icon = GFX_goal_generic_major_alliance
+        prerequisite = { focus = "Form the Empire!" }
+		cost = 15
+		x = 8
+		y = 8
+
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+				add_political_power = 200
+			}
+	}
+	focus = {
+		id = "Join the Axis"
+		icon = GFX_focus_generic_strike_at_democracy1
+		prerequisite = { focus = "Austro-Hungarian Diplomacy" }
+		mutually_exclusive = { focus = "The Imperial Faction" }
+		x = 6
+		y = 9
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		available = {
+			GER = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+				has_capitulated = no
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			GER = {
+				country_event = generic.2
+			}
+		}
+	}
+	focus = {
+		id = "The Imperial Faction"
+		icon = GFX_goal_generic_alliance
+		prerequisite = { focus = "Austro-Hungarian Diplomacy" }
+		mutually_exclusive = { focus = "Join the Axis" }
+		cost = 10
+		x = 10
+		y = 9
+			ai_will_do = {
+					factor = 10
+			}
+			completion_reward = {
+					create_faction = "Austrian Sphere"
+			}
+
+	}
+	focus = {	
+		id = "Invite Italy"
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = "The Imperial Faction" }
+		cost = 10
+		x = 8
+		y = 10
+
+		available = {
+			ITA = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+				is_puppet = no
+				is_in_faction = no
+			}
+		}
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+				ITA = {
+				country_event = generic.5
+			}
+		}
+	}
+	focus = {	
+		id = "Invite Romania"
+		icon = GFX_focus_rom_preserve_romania
+		prerequisite = { focus = "The Imperial Faction" }
+		cost = 10
+		x = 10
+		y = 10
+
+		available = {
+			ROM = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+				is_puppet = no
+				is_in_faction = no
+			}
+		}
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+				ROM = {
+				country_event = generic.5
+			}
+		}
+	}
+	focus = {	
+		id = "Invite Poland"
+		icon = GFX_focus_generic_polish_deal
+		prerequisite = { focus = "The Imperial Faction" }
+		cost = 10
+		x = 12
+		y = 10
+
+		available = {
+			POL = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+				is_puppet = no
+				is_in_faction = no
+			}
+		}
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+				POL = {
+				country_event = generic.5
+			}
+		}
+	}
+	focus = {	
+		id = "Attack the Axis"
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		prerequisite = { focus = "Austro-Hungarian Diplomacy" focus = "Soviet Politics" focus = "Democratic Politics" }
+		mutually_exclusive = { focus = "Attack the Comintern" focus = "Attack the Allies" }
+		cost = 10
+		x = 14
+		y = 9
+
+		available = {
+			GER = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+				is_puppet = no
+				is_in_faction = no
+			}
+		}
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+		create_wargoal = {
+					type = take_state_focus
+					target = GER
+					generator = { 64 }
+				}
+		}
+	}
+	focus = {	
+		id = "Attack the Comintern"
+		icon = GFX_goal_generic_war_with_comintern
+		prerequisite = { focus = "Austro-Hungarian Diplomacy" focus = "Soviet Politics" focus = "Democratic Politics" }
+		mutually_exclusive = { focus = "Attack the Axis" focus = "Attack the Allies" }
+		cost = 10
+		x = 16
+		y = 9
+
+		available = {
+			SOV = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+				is_puppet = no
+				is_in_faction = no
+			}
+		}
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+		create_wargoal = {
+					type = take_state_focus
+					target = SOV
+					generator = { 219 }
+				}
+		}
+	}
+	focus = {	
+		id = "Attack the Allies"
+		icon = GFX_focus_generic_strike_at_democracy3
+		prerequisite = { focus = "Austro-Hungarian Diplomacy" focus = "Soviet Politics" focus = "Democratic Politics" }
+		mutually_exclusive = { focus = "Attack the Axis" focus = "Attack the Comintern" }
+		cost = 10
+		x = 18
+		y = 9
+
+		available = {
+			ENG = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+				is_puppet = no
+				is_in_faction = no
+			}
+		}
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+		create_wargoal = {
+					type = take_state_focus
+					target = ENG
+					generator = { 126 }
+				}
+		}
+	}
+	focus = {	
+		id = "Soviet Politics"
+		icon = GFX_goal_generic_major_alliance
+        prerequisite = { focus = "Join the Comintern" focus = "Our own Path to the Revolution" }
+		cost = 15
+		x = 15
+		y = 8
+
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+				add_political_power = 200
+			}
+	}
+	focus = {	
+		id = "Democratic Politics"
+		icon = GFX_goal_generic_major_alliance
+        prerequisite = { focus = "Join the Allies" focus = "Our own Path to the Revolution" }
+		cost = 15
+		x = 20
+		y = 8
+
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+				add_political_power = 200
+			}
+	}
+	focus = {
+		id = "The Austrian Wunderwaffe"
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = "Austro-Hungarian Diplomacy" focus = "Soviet Politics" focus = "Democratic Politics" }
+		x = 23
+		y = 9
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.65
+				uses = 2
+				category = nuclear
+				category = rocketry
+			}
+		}
+	}
+	focus = {
+		id = "Austrian Industry II"
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = "Austrian Industry" }
+		x = 23
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 3
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = "The Austrian Navy"
+		icon = GFX_goal_generic_occupy_states_coastal
+		prerequisite = { focus = "Austrian Industry" }
+		x = 21
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			navy_experience = 50
+		}
+	}
+	focus = {
+		id = "Austrian Industry III"
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = "Austrian Industry II" }
+		x = 23
+		y = 3
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.35
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = "A Battleship Of Steel"
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = "The Austrian Navy" }
+		x = 21
+		y = 3
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			any_owned_state {
+				is_coastal = yes
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = YUG_contest_the_adriatic
+				bonus = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+	focus = {
+		id = "Austrian Industry IV"
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = "Austrian Industry III" }
+		x = 23
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.35
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	focus = {	
+		id = "Exploit the Oil beneath of Vienna"
+		icon = GFX_goal_generic_oil_refinery
+		prerequisite = { focus = "Austrian Industry IV" }
+		cost = 10
+		x = 23
+		y = 5
+
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+				    743 = {
+				        add_resource = {
+					    type = oil
+					    amount = 18
+				        }
+			        }
+		}
+	}
+	focus = {	
+		id = "Fund the Plastoflex"
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = "Austrian Industry IV" }
+		cost = 10
+		x = 25
+		y = 5
+
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+				    748 = {
+				        add_resource = {
+					    type = rubber
+					    amount = 22
+				        }
+			        }
+		}
+	}
+	focus = {	
+		id = "Fund the Wolfram-Bergbau"
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = "Austrian Industry IV" }
+		cost = 10
+		x = 24
+		y = 6
+
+		ai_will_do = {
+					factor = 10
+		}
+		completion_reward = {
+				    747 = {
+				        add_resource = {
+					    type = tungsten
+					    amount = 14
+				        }
+			        }
+		}
+	}
+	focus = {
+		id = "Regonize the United States"
+		icon = GFX_goal_continuous_increase_nu
+		prerequisite = { focus = "Join the Allies" focus = "Faction Of Peace" }
+		x = 18
+		y = 6
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			USA = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+				has_capitulated = no
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			USA = {
+				add_opinion_modifier = { 
+					target = ROOT
+					modifier = medium_increase
+				}
+			}
+		}
+	}
+	focus = {
+		id = "The Wunderwaffe Lab"
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = "The Austrian Wunderwaffe" }
+		
+		cost = 10
+		x = 21
+		y = 10
+			ai_will_do = {
+					factor = 10
+			}
+			completion_reward = {
+					add_research_slot = 1
+			}
+
+	}
+	focus = {
+		id = "Austrian RADAR"
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = "The Austrian Wunderwaffe" }
+		x = 25
+		y = 10
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = radar_tech_bonus
+				bonus = 0.5
+				uses = 2
+				category = radar_tech
+			}
+		}
+	}
+
+
+
+
+
+
+

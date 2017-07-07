@@ -1,0 +1,78 @@
+add_namespace = ww2
+
+
+country_event = {
+	id = ww2.1 #Germany chooses to puppet Denmark or not
+	title = "The Danish-German Cooperation Pact"
+	desc = "The Danish people has proposed a pact, where we will make a continued cooperation, but, they want their own political government in power, meanwhile the war is going. This could help us, by reducing sabotages and increasing our allied strength."
+	picture = GFX_news_event_001
+	
+	trigger = {
+
+	tag = GER
+	GER = { has_war_with = ENG }
+	GER = { has_war_with = DEN }
+	DEN = { has_capitulated = yes }
+	}
+
+	major = no
+	fire_only_once = yes
+	
+
+
+	option = {
+		name = "Accept the Proposal (Historical)"
+		ai_chance = {
+			factor = 100
+		}
+		puppet = DEN
+		DEN = { transfer_state = 37 }
+		DEN = { transfer_state = 99 }
+		DEN = { transfer_state = 100 }
+		DEN = { transfer_state = 101 }
+		DEN = { transfer_state = 337 }
+		
+	}
+	option = {
+		name = "No! Germany will conquer all!"		
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = ww2.2 #Germany chooses to annex Denmark or not
+	title = "Break the Danish-German Cooperation Pact?"
+	desc = "Germany hoped that setting up a cooperation pact between Denmark and Germany would stop sabotaging and strengthen the Axis, but it was wrong. The sabotaging levels are ever increasing then before, should we break it, mein Führer?"
+	picture = GFX_report_event_worker_protests
+	
+	trigger = {
+
+	    tag = GER
+	    GER = { has_war_with = ENG }
+	    DEN = {
+				is_puppet = yes
+		}
+		date > 1943.8.29
+	}
+
+	major = no
+	fire_only_once = yes
+	
+
+
+	option = {
+		name = "Break the pact! (Historical)"
+		ai_chance = {
+			factor = 100
+		}
+		annex_country = { target = DEN }
+		
+	}
+	option = {
+		name = "Maybe we should give it another chance"		
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
