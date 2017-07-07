@@ -1,0 +1,341 @@
+division_template = {
+	name = "Infanterietruppendivision"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }   # Pioneer Bn         artillery = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Schnelle-Division"				
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }		
+		motorized = { x = 1 y = 0 }			
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Feldartilleriebrigade"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }# Pioneer Bn         
+	}
+}
+
+division_template = {
+	name = "Alpenjäger Division"
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }   # Pioneer Bn
+	}
+}
+
+division_template = {
+	name = "Schnelle-Division"  		
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }      
+	}
+}
+
+division_template = {
+	name = "Leichte-Panzer-Division"				
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }		
+		light_armor = { x = 0 y = 1 }		
+		light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+	support = {
+			recon = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+	}
+}
+
+
+units = {
+	##### Österreichisches Bundesheer #####
+	# I Korps
+	division= {	
+		name = "1. Schnelle-Division (Korps1)"
+		location = 11666  # Vienna
+		division_template = "Schnelle-Division"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1
+
+	}
+	division= {	
+		name = "1. Infanterietruppendivision (Korps1)"
+		location = 11666  # Vienna
+		division_template = "Infanterietruppendivision"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+
+	}
+	
+	division= {	
+		name = "2. Infanterietruppendivision (Korps1)"
+		location = 11666  # Vienna
+		division_template = "Infanterietruppendivision"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+
+	}
+	division= {	
+		name = "1. Feldartilleriebrigade (Korps1)"			
+		location = 11666  # Vienna
+		division_template = "Feldartilleriebrigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+
+	}
+	
+	#II Korps
+	
+	division= {	
+		name = "3. Schnelle-Division (Korps3)"
+		location = 673  # Innsbruck
+		division_template = "Schnelle-Division"
+		start_experience_factor = 1
+		start_equipment_factor = 1
+
+	}
+	division= {	
+		name = "5. Infanterietruppendivision (Korps3)"
+		location = 673  # Innsbruck
+		division_template = "Infanterietruppendivision"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+
+	}
+	
+	division= {	
+		name = "6. Infanterietruppendivision (Korps3)"
+		location = 673  # Innsbruck
+		division_template = "Infanterietruppendivision"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+
+	}
+	division= {	
+		name = "5. Feldartilleriebrigade (Korps3)"			
+		location = 673  # Innsbruck
+		division_template = "Feldartilleriebrigade"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+
+	}
+	
+
+	#III Korps
+	
+	division= {	
+		name = "6. Schnelle-Division (Korps3)"
+		location = 688 # Salzburg
+		division_template = "Schnelle-Division"
+		start_experience_factor = 1
+		start_equipment_factor = 1
+
+	}
+	division= {	
+		name = "11. Infanterietruppendivision (Korps3)"
+		location = 688 # Salzburg
+		division_template = "Infanterietruppendivision"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+
+	}
+	
+	division= {	
+		name = "12. Infanterietruppendivision (Korps3)"
+		location = 688 # Salzburg
+		division_template = "Infanterietruppendivision"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+
+	}
+	division= {	
+		name = "11. Feldartilleriebrigade (Korps3)"
+		location = 688 # Salzburg
+		division_template = "Feldartilleriebrigade"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+
+	}
+	
+	#IV Light Tank Krop
+	
+	division= {	
+		name = "1. Leichte-Panzer Division"
+		location = 11542 # Prag
+		division_template = "Leichte-Panzer-Division"
+		start_experience_factor = 1
+		start_equipment_factor = 1
+
+	}
+	division= {	
+		name = "2. Leichte-Panzer Division"
+		location = 11542 # Prag
+		division_template = "Leichte-Panzer-Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+
+	}
+	
+	division= {	
+		name = "3. Leichte-Panzer Division)"
+		location = 11542 # Prag
+		division_template = "Leichte-Panzer-Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+
+	}
+	division= {	
+		name = "4. Leichte-Panzer Division "
+		location = 11542 # Prag
+		division_template = "Leichte-Panzer-Division"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+
+	}
+
+	
+}
+
+air_wings = {
+	### Luftstreitkräfte
+	4 = {
+		fighter_equipment_1 =  {
+			owner = "AUS" 
+			amount = 54
+		}
+	}
+	9 = {
+		tac_bomber_equipment_1 =  {
+			owner = "AUS" 
+			amount = 48
+		}
+	}
+	70 = {
+		CAS_equipment_1 =  {
+			owner = "AUS" 
+			amount = 27
+		}
+	}
+	154 = {
+		fighter_equipment_1 =  {
+			owner = "AUS" 
+			amount = 50
+		}
+	}
+	104 = {
+		fighter_equipment_1 =  {
+			owner = "AUS" 
+			amount = 30
+		}
+	}
+}
+
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "AUS"
+		}
+		requested_factories = 5
+		progress = 0.54
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "AUS"
+		}
+		requested_factories = 3
+		progress = 14
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = light_tank_equipment_2
+			creator = "AUS" 
+		}
+		requested_factories = 2
+		progress = 0.5
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = motorized_equipment_1
+			creator = "AUS" 
+		}
+		requested_factories = 1
+		progress = 0.4
+		efficiency = 100
+	}
+	
+	add_equipment = {
+		equipment = {
+			type = support_equipment_1
+			creator = "AUS"
+		}
+		amount = 879
+	}
+	add_equipment = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "AUS"
+		}
+		amount = 1289
+	}
+}
