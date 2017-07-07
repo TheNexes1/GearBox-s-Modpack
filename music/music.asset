@@ -1,0 +1,241 @@
+
+# MAIN THEME
+music = {
+	name = "maintheme"
+	file = "hoi4mainthemeallies.ogg"
+	volume = 0.65
+}
+# Monarchy
+music = {
+	name = "austria_hungary_hymne"
+	file = "Anthem_of_Austria_-_Hungary.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "austria_hungary_war"
+	file = "österreich-ungarn_war.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "austria_hungary_war2"
+	file = "österreich-ungarn_war2.ogg"
+	volume = 0.65
+}
+music = {
+	name = "austria_hungary_war3"
+	file = "Rakoczy-marsch.ogg"
+	volume = 0.65
+}
+music = {
+	name = "austria_hungary_war4"
+	file = "music1.ogg"
+	volume = 0.65
+}
+
+# General Peace:
+music = {
+	name = "general_peace_1"
+	file = "general_peace_heartsofmen.ogg"
+	volume = 0.65
+}
+music = {
+	name = "general_peace_2"
+	file = "thewarends.ogg"
+	volume = 0.65
+}
+music = {
+	name = "general_peace_3"
+	file = "asongforthechildrenofww2.ogg"
+	volume = 0.65
+}
+
+# General war:
+music = {
+	name = "general_war_1"
+	file = "general_war_bringforththetanks.ogg"
+	volume = 0.65
+}
+music = {
+	name = "general_war_2"
+	file = "general_war_theattack.ogg"
+	volume = 0.65
+}
+
+
+# Allies Peace:
+music = {
+	name = "allies_peace_1"
+	file = "allies_peace_morningofdday.ogg"
+	volume = 0.65
+}
+music = {
+	name = "allies_peace_2"
+	file = "endofthetour.ogg"
+	volume = 0.65
+}
+
+
+# Allies War:
+music = {
+	name = "allies_war_1"
+	file = "wearesoldiers.ogg"
+	volume = 0.65
+}
+music = {
+	name = "allies_war_2"
+	file = "allies_war_theroyalairforce.ogg"
+	volume = 0.65
+}
+
+
+# Axis Peace:
+music = {
+	name = "axis_peace_1"
+	file = "axis_peace_krakow.ogg"
+	volume = 0.65
+}
+music = {
+	name = "axis_peace_2"
+	file = "luftwaffemarch_reprise.ogg"
+	volume = 0.65
+}
+
+
+# Axis War:
+music = {
+	name = "axis_war_1"
+	file = "axistheme.ogg"
+	volume = 0.65
+}
+music = {
+	name = "axis_war_2"
+	file = "heavywater.ogg"
+	volume = 0.65
+}
+music = {
+	name = "axis_war_3"
+	file = "operationbarbarossa.ogg"
+	volume = 0.65
+}
+music = {
+	name = "axis_war_4"
+	file = "war_axis_1_daysofthunder.ogg"
+	volume = 0.65
+}
+
+
+# Comintern Peace:
+
+music = {
+	name = "comintern_peace_1"
+	file = "motherrussia.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "comintern_peace_2"
+	file = "theredarmy.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "comintern_peace_3"
+	file = "sovietvictory.ogg"
+	volume = 0.65
+}
+
+# Comintern War:
+
+music = {
+	name = "comintern_war_1"
+	file = "themightofsovietunion.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "comintern_war_2"
+	file = "cominterntheme.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "comintern_war_3"
+	file = "thegreatpatrioticwar.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "Midway"
+	file = "midway.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "Aces In Exile"
+	file = "acesinexile.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "Resist And Bite"
+	file = "resistandbite.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "Shiroyama"
+	file = "shiroyama.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "The Last Battle"
+	file = "thelastbattle.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "The Final Solution"
+	file = "finalsolution.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "Attero Dominatus"
+	file = "atterodominatus.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "Panzerkampf"
+	file = "panzerkampf.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "Primo Victoria"
+	file = "primovictoria.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "40 : 1"
+	file = "401.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "Ghost Division"
+	file = "ghostdivision.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "Rise Of Evil"
+	file = "riseofevil.ogg"
+	volume = 0.65
+}
+
+

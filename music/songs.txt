@@ -1,0 +1,517 @@
+
+music = {
+	song = "maintheme"
+	chance = {
+		modifier = {
+			factor = 0.5
+		}		
+	}
+}
+
+# PEACE SONGS ##################
+music = {
+	song = "general_peace_1"
+	
+	chance = {
+		modifier = {
+			factor = 1
+
+			has_war = no
+		}		
+	}	
+}
+
+music = {
+	song = "general_peace_2"
+	
+	chance = {
+		modifier = {
+			factor = 1
+
+			has_war = no
+		}		
+	}	
+}
+
+music = {
+	song = "general_peace_3"
+	
+	chance = {
+		modifier = {
+			factor = 1
+
+			has_war = no
+		}		
+	}
+}
+
+music = {
+	song = "allies_peace_1"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = no
+			has_government = democratic
+		}		
+	}	
+}
+
+music = {
+	song = "allies_peace_2"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = no
+			has_government = democratic
+		}		
+	}	
+}
+
+music = {
+	song = "axis_peace_1"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = no
+			has_government = fascist
+		}		
+	}	
+}
+
+music = {
+	song = "axis_peace_2"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = no
+			has_government = fascist
+		}		
+	}	
+}
+
+music = {
+	song = "austria_hungary_hymne"
+	
+	chance = {
+		modifier = {
+			factor = 10
+
+			has_war = no
+			has_government = monarchy
+		}		
+	}	
+}
+
+
+
+# WAR SONGS ####################
+
+music = {
+	song = "general_war_1"
+	
+	chance = {
+		modifier = {
+			factor = 1
+
+			has_war = yes
+		}		
+	}	
+}
+
+music = {
+	song = "austria_hungary_war"
+	
+	chance = {
+		modifier = {
+			factor = 10
+
+			has_war = yes
+			has_government = monarchy
+		}		
+	}	
+}
+
+music = {
+	song = "austria_hungary_war2"
+	
+	chance = {
+		modifier = {
+			factor = 10
+
+			has_war = yes
+			has_government = monarchy
+		}		
+	}	
+}
+
+music = {
+	song = "austria_hungary_war3"
+	
+	chance = {
+		modifier = {
+			factor = 10
+
+			has_war = yes
+			has_government = monarchy
+		}		
+	}	
+}
+music = {
+	song = "austria_hungary_war4"
+	
+	chance = {
+		modifier = {
+			factor = 10
+
+			has_war = yes
+			has_government = monarchy
+		}		
+	}	
+}
+
+music = {
+	song = "general_war_2"
+	
+	chance = {
+		modifier = {
+			factor = 1
+
+			has_war = yes
+		}		
+	}	
+}
+
+music = {
+	song = "axis_war_1"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = yes
+			has_government = fascist
+		}		
+	}	
+}
+
+music = {
+	song = "axis_war_2"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = yes
+			has_government = fascist
+		}		
+	}	
+}
+
+music = {
+	song = "axis_war_3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = yes
+			has_government = fascist
+		}		
+	}	
+}
+
+music = {
+	song = "axis_war_4"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = yes
+			has_government = fascist
+		}		
+	}	
+}
+
+music = {
+	song = "allies_war_1"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = yes
+			has_government = democratic
+		}		
+	}	
+}
+
+music = {
+	song = "allies_war_2"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = yes
+			has_government = democratic
+		}		
+	}	
+}
+
+music = {
+	song = "comintern_peace_1"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = no
+			has_government = communism
+		}		
+	}	
+}
+
+music = {
+	song = "comintern_peace_2"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = no
+			has_government = communism
+		}		
+	}	
+}
+
+music = {
+	song = "comintern_peace_3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = no
+			has_government = communism
+		}		
+	}	
+}
+
+
+music = {
+	song = "comintern_war_1"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = yes
+			has_government = communism
+		}		
+	}	
+}
+
+music = {
+	song = "comintern_war_2"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = yes
+			has_government = communism
+		}		
+	}	
+}
+
+music = {
+	song = "comintern_war_3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_war = yes
+			has_government = communism
+		}		
+	}	
+}
+
+# Drew's Music Pack
+
+music = {
+	song = "Midway"
+	
+	chance = {
+		modifier = {
+			factor = 4
+
+			has_war = yes
+			has_government = democratic
+			tag = USA
+			has_war_with = JAP
+		}		
+	}	
+}
+
+music = {
+	song = "Aces In Exile"
+	
+	chance = {
+		modifier = {
+			factor = 4
+
+			has_war = yes
+			has_government = democratic
+			tag = ENG
+			FRA = { has_capitulated = yes }
+		}		
+	}	
+}
+
+music = {
+	song = "Resist And Bite"
+	
+	chance = {
+		modifier = {
+			factor = 5
+
+			has_war = yes
+			has_government = democratic
+			tag = BEL
+			has_war_with = GER
+		}		
+	}	
+}
+
+music = {
+	song = "Shiroyama"
+	
+	chance = {
+		modifier = {
+			factor = 5
+
+			has_war = yes
+			has_government = fascism
+			tag = JAP
+			has_war_with = USA
+		}		
+	}	
+}
+
+music = {
+	song = "The Last Battle"
+	
+	chance = {
+		modifier = {
+			factor = 5
+
+			has_war = yes
+			has_government = democratic
+			has_war_with = GER
+			controls_state = 42
+		}		
+	}	
+}
+
+music = {
+	song = "The Final Solution"
+	
+	chance = {
+		modifier = {
+			factor = 4
+
+			has_war = yes
+			has_war_with = GER
+			controls_state = 80
+			TAG = SOV
+		}		
+	}	
+}
+
+music = {
+	song = "Attero Dominatus"
+	
+	chance = {
+		modifier = {
+			factor = 4
+
+			has_war = yes
+			has_war_with = GER
+			controls_state = 64
+			TAG = SOV
+		}		
+	}	
+}
+
+music = {
+	song = "Panzerkampf"
+	
+	chance = {
+		modifier = {
+			factor = 4
+
+			has_war = yes
+			has_war_with = GER
+			controls_state = 220
+			GER = { 
+					controls_state = 225
+				} 
+
+		}		
+	}	
+}
+
+music = {
+	song = "40 : 1"
+	
+	chance = {
+		modifier = {
+			factor = 3
+
+			has_war = yes
+			has_war_with = GER
+			POL = { has_capitulated = yes }
+		}		
+	}	
+}
+
+music = {
+	song = "Ghost Division"
+	
+	chance = {
+		modifier = {
+			factor = 3
+
+			has_war = yes
+			has_war_with = ENG
+			BEL = { has_capitulated = yes }
+			tag = GER
+		}		
+	}	
+}
+
+music = {
+	song = "Rise Of Evil"
+	
+	chance = {
+		modifier = {
+			factor = 3
+
+			has_war = no
+			has_government = communism
+			GER = { 
+					NOT = { has_war_with = ENG } 
+			} 
+		}		
+	}	
+}
