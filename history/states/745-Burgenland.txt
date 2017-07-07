@@ -1,0 +1,29 @@
+state={
+	id=745
+	name="STATE_745"
+	provinces={
+		3700 9661 11630
+	}
+	manpower=40000
+	buildings_max_level_factor=1.000
+	history={
+		owner = AUS
+		buildings = {
+			infrastructure = 6
+			#arms_factory = 1
+			#industrial_complex = 0
+			#air_base = 0
+		}
+		add_core_of = AUS
+
+		1938.3.12 = {
+			owner = GER
+			controller = GER
+		}
+		1939.1.1 = {
+			buildings = {
+				anti_air_building = 5
+			}
+		}
+	}
+}

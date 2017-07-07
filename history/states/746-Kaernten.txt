@@ -1,0 +1,33 @@
+state={
+	id=746
+	name="STATE_746"
+	manpower = 409721
+	provinces={
+		668 3674 6673 3673 6687
+	}
+	state_category = town
+	buildings_max_level_factor=1.000
+	history={
+		owner = AUS
+		buildings = {
+			infrastructure = 6
+			#arms_factory = 1
+			#industrial_complex = 0
+			#air_base = 0
+		}
+		victory_points = {
+			9648 10.0 
+		}
+		add_core_of = AUS
+
+		1938.3.12 = {
+			owner = GER
+			controller = GER
+		}
+		1939.1.1 = {
+			buildings = {
+				anti_air_building = 5
+			}
+		}
+	}
+}

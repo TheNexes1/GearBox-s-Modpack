@@ -1,0 +1,36 @@
+
+state={
+	id=744
+	name="STATE_744"
+	manpower = 154836
+	resources={
+		steel=1
+	}
+	
+	state_category = town
+	
+	history={
+		owner = AUS
+		buildings = {
+			infrastructure = 10
+			arms_factory = 1
+			industrial_complex = 0
+			air_base = 0
+		}
+		add_core_of = AUS
+
+		1938.3.12 = {
+			owner = GER
+			controller = GER
+		}
+		1939.1.1 = {
+			buildings = {
+				anti_air_building = 5
+			}
+		}
+	}
+
+	provinces={
+		6680	6678
+	}
+}
