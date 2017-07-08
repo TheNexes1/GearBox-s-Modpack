@@ -357,7 +357,6 @@ music = {
 
 			has_war = yes
 			has_government = democratic
-			tag = USA
 			has_war_with = JAP
 		}		
 	}	
@@ -372,7 +371,6 @@ music = {
 
 			has_war = yes
 			has_government = democratic
-			tag = ENG
 			FRA = { has_capitulated = yes }
 		}		
 	}	
@@ -387,7 +385,6 @@ music = {
 
 			has_war = yes
 			has_government = democratic
-			tag = BEL
 			has_war_with = GER
 		}		
 	}	
@@ -402,7 +399,6 @@ music = {
 
 			has_war = yes
 			has_government = fascism
-			tag = JAP
 			has_war_with = USA
 		}		
 	}	
@@ -417,7 +413,6 @@ music = {
 
 			has_war = yes
 			has_government = democratic
-			has_war_with = GER
 			controls_state = 42
 		}		
 	}	
@@ -433,7 +428,6 @@ music = {
 			has_war = yes
 			has_war_with = GER
 			controls_state = 80
-			TAG = SOV
 		}		
 	}	
 }
@@ -448,7 +442,6 @@ music = {
 			has_war = yes
 			has_war_with = GER
 			controls_state = 64
-			TAG = SOV
 		}		
 	}	
 }
@@ -495,7 +488,6 @@ music = {
 			has_war = yes
 			has_war_with = ENG
 			BEL = { has_capitulated = yes }
-			tag = GER
 		}		
 	}	
 }
