@@ -167,7 +167,7 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Karl I."
+	name = "Otto Von. Habsburg."
 	desc = "POLITICS_KARL_RENNER_DESC"
 	picture = "gfx/leaders/AUS/leader_karl.dds"
 	expire = "1960.1.1"
