@@ -3254,5 +3254,49 @@ spriteTypes = {
 		name = "GFX_idea_generic_goods_red_bonus"
 		texturefile = "gfx/interface/ideas/generic_goods_red_bonus.dds"
 	}	
+	### MEXICO IDEAS
+	
+	spriteType = {
+		name = "GFX_idea_incomplete_land_reform"
+		texturefile = "gfx/interface/ideas/incomplete_land_reform.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_land_reform"
+		texturefile = "gfx/interface/ideas/land_reform.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_maximato"
+		texturefile = "gfx/interface/ideas/maximato.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_maximato_1"
+		texturefile = "gfx/interface/ideas/maximato.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_segregation"
+		texturefile = "gfx/interface/ideas/segregation.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_education_reform"
+		texturefile = "gfx/interface/ideas/education_reform.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_MEX_air_inovations"
+		texturefile = "gfx/interface/ideas/MEX_air_inovations.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_MEX_mexican_expeditionary_forces"
+		texturefile = "gfx/interface/ideas/MEX_mexican_expeditionary_forces.dds"
+	}
+	
+
+}
 	
 }
