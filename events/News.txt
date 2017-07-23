@@ -1,5 +1,5 @@
 ###########################
-# News Events
+# News Events GREAT AUSTRIA MOD
 ###########################
 
 add_namespace = news
@@ -111,5 +111,30 @@ news_event = {
 		#		TAG = CHI
 		#	}
 		#}
+	}
+}
+######################################################
+################MEXICO MOD NEWS#######################
+######################################################
+
+news_event = {
+	id = news.331
+	title = news.331.t
+	desc = news.331.d
+	picture = GFX_news_event_mexico1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.331.a
+		trigger = {
+			NOT = { original_tag = MEX }
+		}
+	}
+	option = {
+		name = news.331.b
+		trigger = { original_tag = MEX }
 	}
 }
