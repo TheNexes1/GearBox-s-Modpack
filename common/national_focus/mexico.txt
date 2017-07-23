@@ -1,0 +1,4424 @@
+focus_tree = {
+	id = mexican_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = MEX
+		}
+	}
+	
+	default = no
+	
+	### INDUSTRIAL FOCUS ###
+	
+	focus = {
+		id = MEX_six_year_plan
+		icon = GFX_goal_generic_construction
+		x = 4
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_political_power = 150
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.4
+				uses = 2
+				category = industry
+			}
+		}
+		
+		completion_reward = {
+			add_political_power = 150
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.4
+				uses = 2
+				category = industry
+			}	
+		}
+	}
+
+	focus = {
+		id = MEX_land_reform
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_political_power = 120
+				add_ideas = land_reform
+				swap_ideas = {
+					remove_idea = maximato
+					add_idea = maximato_1
+			}		
+		}
+		
+		completion_reward = {
+			add_political_power = 120
+			add_ideas = land_reform
+			swap_ideas = {
+				remove_idea = maximato
+				add_idea = maximato_1
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_exile_el_jefe
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = MEX_improve_rural_infrastructure }
+		prerequisite = { focus = MEX_peasent_armament }
+		x = 1
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			country_event = { id = mexico.37 }
+			add_political_power = 150
+		}
+		
+		completion_reward = {
+			country_event = { id = mexico.37 }
+			add_political_power = 150
+		}
+	}
+	
+	focus = {
+		id = MEX_peasent_armament
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = MEX_national_industry }
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			if = {
+				limit = {
+					NOT = {
+						481 = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_owned_controlled_state =  {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_factories_1MF
+				}
+				random_owned_controlled_state =  {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_factories_1MF
+				}
+			}
+			if = {
+				limit = {
+					481 = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+				}
+				481 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_factories_1MF
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						478 = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_owned_controlled_state =  {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_factories_1MF
+				}
+				random_owned_controlled_state =  {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_factories_1MF
+				}
+			}
+			if = {
+				limit = {
+				478 = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				}
+				478 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}	
+				set_state_flag = MEX_military_factories_1MF
+				}
+			}
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						479 = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_owned_controlled_state =  {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_factories_1MF
+				}
+				random_owned_controlled_state =  {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_factories_1MF
+				}
+			}
+			if = {
+				limit = {
+					479 = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+				}
+				479 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_factories_1MF
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						481 = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_owned_controlled_state =  {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_factories_1MF
+				}
+				random_owned_controlled_state =  {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_factories_1MF
+				}
+			}
+			if = {
+				limit = {
+					481 = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+				}
+				481 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_factories_1MF
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						478 = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_owned_controlled_state =  {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_factories_1MF
+				}
+				random_owned_controlled_state =  {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_factories_1MF
+				}
+			}
+			if = {
+				limit = {
+				478 = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				}
+				478 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}	
+				set_state_flag = MEX_military_factories_1MF
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_improve_rural_infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = MEX_national_industry }
+		available_if_capitulated = yes
+
+		x = 2
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		complete_tooltip = {
+			every_state = {
+				if = {
+				limit = {
+					480 = {
+						OR = {
+							NOT = { is_owned_and_controlled_by = MEX }
+							AND = {
+								is_owned_and_controlled_by = MEX
+								free_building_slots = {
+									building = infrastructure
+									size < 3
+								}
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { 
+						free_building_slots = {
+							building = infrastructure
+							size > 2
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_construction_3Inf
+				}
+			}
+			480 = {
+				if = {
+					limit = { 
+						is_owned_and_controlled_by = MEX
+						free_building_slots = {
+							building = infrastructure
+							size > 2
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_construction_3Inf
+				}
+			}
+			if = {
+				limit = {
+					481 = {
+						OR = {
+							NOT = { is_owned_and_controlled_by = MEX }
+							AND = {
+								is_owned_and_controlled_by = MEX
+								free_building_slots = {
+									building = infrastructure
+									size < 3
+								}
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { 
+						free_building_slots = {
+							building = infrastructure
+							size > 2
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_construction_3Inf
+				}
+			}
+			481 = {
+				if = {
+					limit = { 
+						is_owned_and_controlled_by = MEX
+						free_building_slots = {
+							building = infrastructure
+							size > 2
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_construction_3Inf
+				}
+			}			
+			if = {
+				limit = {
+					483 = {
+						OR = {
+							NOT = { is_owned_and_controlled_by = MEX }
+							AND = {
+								is_owned_and_controlled_by = MEX
+								free_building_slots = {
+									building = infrastructure
+									size < 3
+								}
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { 
+						free_building_slots = {
+							building = infrastructure
+							size > 2
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_construction_3Inf
+				}
+			}
+			483 = {
+				if = {
+					limit = { 
+						is_owned_and_controlled_by = MEX
+						free_building_slots = {
+							building = infrastructure
+							size > 2
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_construction_3Inf
+				}
+			}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					480 = {
+						OR = {
+							NOT = { is_owned_and_controlled_by = MEX }
+							AND = {
+								is_owned_and_controlled_by = MEX
+								free_building_slots = {
+									building = infrastructure
+									size < 3
+								}
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { 
+						free_building_slots = {
+							building = infrastructure
+							size > 2
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_construction_3Inf
+				}
+			}
+			480 = {
+				if = {
+					limit = { 
+						is_owned_and_controlled_by = MEX
+						free_building_slots = {
+							building = infrastructure
+							size > 2
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_construction_3Inf
+				}
+			}
+			if = {
+				limit = {
+					481 = {
+						OR = {
+							NOT = { is_owned_and_controlled_by = MEX }
+							AND = {
+								is_owned_and_controlled_by = MEX
+								free_building_slots = {
+									building = infrastructure
+									size < 3
+								}
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { 
+						free_building_slots = {
+							building = infrastructure
+							size > 2
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_construction_3Inf
+				}
+			}
+			481 = {
+				if = {
+					limit = { 
+						is_owned_and_controlled_by = MEX
+						free_building_slots = {
+							building = infrastructure
+							size > 2
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_construction_3Inf
+				}
+			}			
+			if = {
+				limit = {
+					483 = {
+						OR = {
+							NOT = { is_owned_and_controlled_by = MEX }
+							AND = {
+								is_owned_and_controlled_by = MEX
+								free_building_slots = {
+									building = infrastructure
+									size < 3
+								}
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { 
+						free_building_slots = {
+							building = infrastructure
+							size > 2
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_construction_3Inf
+				}
+			}
+			483 = {
+				if = {
+					limit = { 
+						is_owned_and_controlled_by = MEX
+						free_building_slots = {
+							building = infrastructure
+							size > 2
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+					set_state_flag = MEX_military_construction_3Inf
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_nationalize_mexican_oil
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = MEX_six_year_plan }
+		
+		available = {
+			MEX = {
+				controls_state = 475
+			}
+		}
+		
+		x = 5
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_resource = {
+				type = oil
+				amount = 50
+				state = 475
+			}
+			USA = {
+				country_event = { id = mexico.38 days = 1 }
+			}
+			ENG = { 
+				country_event = { id = mexico.38 days = 1 }
+			}
+			hidden_effect = {
+				set_country_flag = nationalized_mexican_oil
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			add_resource = {
+				type = oil
+				amount = 50
+				state = 475
+			}
+			USA = {
+				country_event = { id = mexico.38 days = 1 }
+			}
+			ENG = { 
+				country_event = { id = mexico.38 days = 1 }
+			}
+			hidden_effect = {
+				set_country_flag = nationalized_mexican_oil
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_pemex
+		icon = GFX_goal_generic_oil_refinery
+		prerequisite = { focus = MEX_instituto_politecnico_nacional }
+		prerequisite = { focus = MEX_protect_the_trade }
+		available = {
+			MEX = {
+				controls_state = 479
+				controls_state = 477
+				controls_state = 476
+				controls_state = 475
+				controls_state = 474
+			}
+		}
+		x = 5
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_tooltip = {
+			479 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			477 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			476 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			475 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			474 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		
+		completion_reward = {
+			479 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			477 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			476 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			475 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			474 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_altos_hornos_de_mexico
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = MEX_instituto_politecnico_nacional }
+		
+		available = {
+			MEX = {
+				controls_state = 480
+			}
+		}
+		
+		x = 4
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_resource = {
+				type = steel
+				amount = 22
+				state = 480
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 22
+				state = 480
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_education_reform
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = MEX_exile_el_jefe }
+		x = 2
+		y = 5
+		cost = 10
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+		}
+		
+		complete_tooltip = {
+			add_ideas = education_reform
+		}
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_ideas = education_reform
+		}
+	}
+	
+	focus = {
+		id = MEX_instituto_politecnico_nacional
+		icon = GFX_focus_research
+		prerequisite = { focus = MEX_ferrocarriles_nacionales_de_mexico }
+		prerequisite = { focus = MEX_nationalize_mexican_oil }
+		x = 4
+		y = 2
+		cost = 10
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+		}
+		
+		complete_tooltip = {
+			add_research_slot = 1
+		}
+		
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = MEX_national_industry  ### capital
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = MEX_land_reform }
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		
+		complete_tooltip = {
+			277 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes	
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		
+		available = {
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			277 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes	
+				}
+				add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_national_industry_2
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = MEX_instituto_politecnico_nacional focus = MEX_improve_rural_infrastructure }
+		x = 3
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		
+		complete_tooltip = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		
+		available = {
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_ferrocarriles_nacionales_de_mexico
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = MEX_six_year_plan }
+		x = 3
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		
+		complete_tooltip = {
+			474 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			475 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			479 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			482 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			484 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}		
+		}
+		
+		available = {
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			474 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			475 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			479 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			482 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			484 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_comision_nacional_de_energia_nuclear
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = MEX_exile_el_jefe }
+		x = 1
+		y = 4
+		cost = 10
+
+		complete_tooltip = {
+			add_tech_bonus = {
+				name = nuclear_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				category = nuclear
+			}
+		}
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = nuclear_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				category = nuclear
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_extra_research_slot
+		icon = GFX_focus_research
+		prerequisite = { focus = MEX_comision_nacional_de_energia_nuclear }
+		x = 0
+		y = 5
+		cost = 10
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+		}
+
+		complete_tooltip = {
+			add_research_slot = 1
+		}
+		
+		available_if_capitulated = yes
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	### ARMY FOCUS ###
+	
+	focus = {
+		id = MEX_SEDENA
+		icon = GFX_goal_generic_army_doctrines
+		x = 17
+		y = 0
+		cost = 5
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+		}
+
+		complete_tooltip = {
+			air_experience = 25
+			army_experience = 5
+		}
+		
+		available_if_capitulated = yes
+		completion_reward = {
+			air_experience = 25
+			army_experience = 5
+		}
+	}
+	
+	focus = {
+		id = MEX_support_republican_spain
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = MEX_SEDENA }
+		mutually_exclusive = { focus = MEX_support_nationalist_spain }
+		x = 16
+		y = 1
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+		}
+		
+		bypass = {
+			has_global_flag = scw_over
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			country_event = { id = mexico.23 }
+		}
+
+		completion_reward = {
+			country_event = { id = mexico.23 }
+		}
+	}
+	
+	focus = {
+		id = MEX_support_nationalist_spain
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = MEX_SEDENA }
+		mutually_exclusive = { focus = MEX_support_republican_spain }
+		x = 18
+		y = 1
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+		}
+		
+		bypass = {
+			has_global_flag = scw_over
+			has_government = fascism
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			country_event = { id = mexico.24 }
+		}
+
+		completion_reward = {
+			country_event = { id = mexico.24 }
+		}
+	}
+	
+	focus = {
+		id = MEX_safe_haven
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = MEX_support_nationalist_spain focus = MEX_support_republican_spain }
+		x = 17
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+			has_global_flag = scw_over
+		}
+		
+		bypass = {
+
+		}
+
+		complete_tooltip = {
+			country_event = mexico.25
+		}
+
+		completion_reward = {
+			country_event = mexico.25
+		}
+	}
+	
+	#focus = {
+	#	id = MEX_new_mexico_military_institute
+	#	icon = GFX_goal_generic_allies_build_infantry
+	#	prerequisite = { focus = MEX_SEDENA }
+	#	x = 20
+	#	y = 1
+	#	cost = 10
+#
+#		available_if_capitulated = yes
+#		
+#		complete_tooltip = {
+#			army_experience = 10
+#			add_tech_bonus = {
+#				name = land_doc_bonus
+#				bonus = 0.3
+#				uses = 2
+#				category = land_doctrine
+#			}
+#		}
+#
+#		completion_reward = {
+#			army_experience = 10
+#			add_tech_bonus = {
+#				name = land_doc_bonus
+#				bonus = 0.3
+#				uses = 2
+#				category = land_doctrine
+#			}
+#		}
+#	}
+	
+	focus = {
+		id = MEX_lessons_from_the_civil_war
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = MEX_SEDENA }
+		x = 20
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_recall_diaz
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = MEX_modernize_the_cavalry focus = MEX_modern_weaponry }
+		x = 21
+		y = 3
+
+		cost = 10
+
+		available = {
+		}
+
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			army_experience = 20
+			custom_effect_tooltip = MEX_felix_diaz_tt
+			hidden_effect = {
+				create_corps_commander = {
+					name = "Félix Diaz"
+					portrait_path = "gfx/leaders/MEX/FelixDiazMEX.dds"
+					traits = { trait_engineer }
+					skill = 5
+				}
+			}
+		}
+
+		completion_reward = {
+			army_experience = 20
+			custom_effect_tooltip = MEX_felix_diaz_tt
+			hidden_effect = {
+				create_corps_commander = {
+					name = "Félix Diaz"
+					portrait_path = "gfx/leaders/MEX/FelixDiazMEX.dds"
+					traits = { trait_engineer }
+					skill = 5
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_modernize_the_cavalry
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = MEX_lessons_from_the_civil_war }
+		bypass = { has_tech = motorised_infantry }
+		x = 20
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.80
+				technology = motorised_infantry
+			}
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.80
+				technology = motorised_infantry
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_modern_weaponry
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = MEX_lessons_from_the_civil_war }
+		x = 22
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.3
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.3
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_artillery_research
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = MEX_recall_diaz }
+		x = 23
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.3
+				uses = 2
+				category = artillery
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.3
+				uses = 2
+				category = artillery
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_the_braceros_program
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = MEX_recall_diaz }
+		x = 21
+		y = 4
+		available = {
+			OR = {
+				has_war_with = GER
+				has_war_with = JAP
+				has_war_with = ITA
+				has_war_with = SOV
+				has_war_with = FRA
+				has_war_with = ENG
+				has_war_with = USA
+				any_other_country = {
+					has_offensive_war_with = ROOT
+				}
+				threat > 0.5
+			}
+		}
+		cost = 10
+
+		complete_tooltip = {
+			add_ideas = MEX_braceros_program
+		}
+
+		completion_reward = {
+			add_ideas = MEX_braceros_program
+		}
+	}
+	
+#	focus = {
+#		id = MEX_equipment_effort
+#		icon = GFX_goal_generic_army_artillery
+#		prerequisite = { focus = MEX_artillery_research }
+#		x = 22
+#		y = 5
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		complete_tooltip = {
+#			add_tech_bonus = {
+#				name = MEX_equipment_effort
+#				bonus = 0.5
+#				uses = 1
+#				category = infantry_weapons
+#				category = artillery
+#			}
+#		}
+#
+#		completion_reward = {			
+#			add_tech_bonus = {
+#				name = MEX_equipment_effort
+#				bonus = 0.5
+#				uses = 1
+#				category = infantry_weapons
+#				category = artillery
+#			}
+#		}
+#	}
+	
+	focus = {
+		id = MEX_first_tank_regiment
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = MEX_recall_diaz }
+		x = 19
+		y = 4
+
+		cost = 10
+
+		complete_tooltip = {
+			add_tech_bonus = {
+				name = MEX_first_tank_regiment
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEX_first_tank_regiment
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_fund_the_gafe
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = MEX_first_tank_regiment focus = MEX_the_braceros_program focus = MEX_artillery_research }
+		x = 21
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 2
+				technology = paratroopers
+				technology = paratroopers2
+				technology = paratroopers3
+				technology = marines
+				technology = marines2
+				technology = marines3
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 2
+				technology = paratroopers
+				technology = paratroopers2
+				technology = paratroopers3
+				technology = marines
+				technology = marines2
+				technology = marines3
+			}
+		}
+	}
+
+	
+	### NAVY FOCUS ###
+
+	focus = {
+		id = MEX_armada_de_mexico
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 8
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+
+		complete_tooltip = {
+			navy_experience = 50
+			479 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			477 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		
+		completion_reward = {
+			navy_experience = 50
+			479 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			477 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_protect_the_trade
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = MEX_armada_de_mexico }
+		x = 6
+		y = 2
+
+		cost = 10
+
+		complete_tooltip = {
+			add_ideas = MEX_convoy_escort_effort
+			add_tech_bonus = {
+				name = MEX_protect_the_trade
+				bonus = 0.5
+				uses = 2
+				category = convoy_defense_tree
+			}
+		}
+
+		completion_reward = {
+			add_ideas = MEX_convoy_escort_effort
+			add_tech_bonus = {
+				name = MEX_protect_the_trade
+				bonus = 0.5
+				uses = 2
+				category = convoy_defense_tree
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_naval_aviation
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = MEX_carrier_effort focus = MEX_the_aztec_eagles }
+		x = 11
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = naval_bomber
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = naval_bomber
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_escort_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = MEX_convoy_tactics }
+		x = 10
+		y = 2
+		cost = 10
+
+		complete_tooltip = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 0.5
+				uses = 2
+				technology = early_submarine
+				technology = basic_submarine
+				technology = improved_submarine
+				technology = advanced_submarine
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 0.5
+				uses = 2
+				technology = early_submarine
+				technology = basic_submarine
+				technology = improved_submarine
+				technology = advanced_submarine
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_destroyer_effort
+		icon = GFX_goal_generic_navy_anti_submarine
+		prerequisite = { focus = MEX_convoy_tactics }
+		x = 8
+		y = 2
+
+		cost = 10
+
+		complete_tooltip = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				uses = 2
+				technology = early_destroyer
+				technology = basic_destroyer
+				technology = improved_destroyer
+				technology = advanced_destroyer
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				uses = 2
+				technology = early_destroyer
+				technology = basic_destroyer
+				technology = improved_destroyer
+				technology = advanced_destroyer
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_convoy_tactics
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = MEX_armada_de_mexico }
+		x = 9
+		y = 1
+
+		cost = 10
+
+		complete_tooltip = {
+			add_tech_bonus = {
+				name = MEX_convoy_tactics
+				bonus = 0.5
+				uses = 2
+				category = convoy_defense_tree
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEX_convoy_tactics
+				bonus = 0.5
+				uses = 2
+				category = convoy_defense_tree
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_fund_the_marine_corps
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = MEX_destroyer_effort focus = MEX_escort_effort }
+		
+		x = 9
+		y = 3
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_tech_bonus = {
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = tp_tech
+			}
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = tp_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_battleship_effort
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = MEX_fund_the_marine_corps }
+		mutually_exclusive = { focus = MEX_carrier_effort }
+		x = 8
+		y = 4
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_tech_bonus = {
+				ahead_reduction = 1
+				bonus = 0.5
+				uses = 1
+				category = bb_tech
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				ahead_reduction = 1
+				bonus = 0.5
+				uses = 1
+				category = bb_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_carrier_effort
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = MEX_fund_the_marine_corps }
+		mutually_exclusive = { focus = MEX_battleship_effort }
+		x = 10
+		y = 4
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_tech_bonus = {
+				ahead_reduction = 1
+				bonus = 0.5
+				uses = 1
+				category = cv_tech
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				ahead_reduction = 1
+				bonus = 0.5
+				uses = 1
+				category = cv_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_secure_the_gulf
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = MEX_fund_the_marine_corps }
+		x = 6
+		y = 4
+
+		cost = 10
+
+		complete_tooltip = {
+			
+			477 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 12810
+						instant_build = yes
+					}
+				}
+			}
+			
+			476 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 10889
+						instant_build = yes
+					}
+				}
+			}
+			
+			475 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 12867
+						instant_build = yes
+					}
+				}
+			}
+			
+			474 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 4904
+						instant_build = yes
+					}
+				}
+			}	
+		}
+
+		completion_reward = {
+			
+			477 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 12810
+						instant_build = yes
+					}
+				}
+			}
+			
+			476 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 10889
+						instant_build = yes
+					}
+				}
+			}
+			
+			475 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 12867
+						instant_build = yes
+					}
+				}
+			}
+			
+			474 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 4904
+						instant_build = yes
+					}
+				}
+			}	
+		}
+	}
+	
+#	focus = {
+#		id = MEX_pacific_war_operations
+#		icon = GFX_goal_generic_amphibious_assault
+#		prerequisite = { focus = MEX_convoy_tactics }
+#		available = {
+#			OR = {
+#				has_war_with = GER
+#				has_war_with = JAP
+#				has_war_with = ITA
+#				has_war_with = SOV
+#				has_war_with = FRA
+#				has_war_with = ENG
+#				threat > 0.70
+#			}
+#		}
+#		x = 14
+#		y = 4
+#		cost = 10
+#		#ai_will_do = {
+#		#	factor = 1
+#		#}
+#
+#		available_if_capitulated = yes
+#		
+#		completion_reward = {
+#			add_ideas = {
+#				MEX_pacific_war_operations
+#			}
+#			add_tech_bonus = {
+#				bonus = 0.5
+#				ahead_reduction = 1
+#				uses = 1
+#				category = tp_tech
+#			}
+#		}
+#	}
+	
+	### AIR FOCUS ###
+
+	focus = {
+		id = MEX_escuela_militar_de_aviacion
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = MEX_SEDENA }
+		x = 14
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes
+
+
+		complete_tooltip = {
+			air_experience = 25
+			477 = {
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_sup_bonus
+				bonus = 0.5
+				uses = 1
+				category = battlefield_support_tree
+			}						
+		}
+
+		completion_reward = {
+			air_experience = 25
+			477 = {
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_sup_bonus
+				bonus = 0.5
+				uses = 1
+				category = battlefield_support_tree
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_air_inovations
+		icon = GFX_goal_generic_air_production
+		prerequisite = { focus = MEX_escuela_militar_de_aviacion }
+		x = 13
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		complete_tooltip = {
+			add_ideas = {
+				MEX_air_inovations
+			}
+			air_experience = 50
+			add_tech_bonus = {
+				name = air_sup_bonus
+				bonus = 0.5
+				uses = 1
+				category = battlefield_support_tree
+			}
+		}
+		completion_reward = {
+			add_ideas = {
+				MEX_air_inovations
+			}
+			air_experience = 50
+			add_tech_bonus = {
+				name = air_sup_bonus
+				bonus = 0.5
+				uses = 1
+				category = battlefield_support_tree
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_fighter_effort
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = MEX_air_inovations }
+		mutually_exclusive = { focus = MEX_bomber_effort }
+		x = 14
+		y = 3
+
+		cost = 10
+
+		complete_tooltip = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 2
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 2
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_bomber_effort
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = MEX_air_inovations }
+		mutually_exclusive = { focus = MEX_fighter_effort }
+		x = 16
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 2
+				technology = strategic_bomber1
+				technology = strategic_bomber2
+				technology = strategic_bomber3
+				category = tactical_bomber
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 2
+				technology = strategic_bomber1
+				technology = strategic_bomber2
+				technology = strategic_bomber3
+				category = tactical_bomber
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_la_FAEM
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = MEX_fighter_effort focus = MEX_bomber_effort  }
+		x = 15
+		y = 4
+		cost = 10
+		available = {
+			OR = {
+				has_war_with = GER
+				has_war_with = JAP
+				has_war_with = ITA
+				has_war_with = SOV
+				has_war_with = FRA
+				has_war_with = ENG
+				has_war_with = USA
+				any_other_country = {
+					has_offensive_war_with = ROOT
+				}
+				threat > 0.5
+			}
+		}
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_ideas = {
+				MEX_mexican_expeditionary_forces
+			}
+			add_tech_bonus = {
+				name = air_sup_bonus
+				bonus = 0.5
+				uses = 1
+				category = battlefield_support_tree
+				
+			}
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MEX_mexican_expeditionary_forces
+			}
+			add_tech_bonus = {
+				name = air_sup_bonus
+				bonus = 0.5
+				uses = 1
+				category = battlefield_support_tree
+				
+			}
+		}
+	}
+
+	focus = {
+		id = MEX_the_aztec_eagles
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = MEX_air_inovations  }
+		x = 12
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_tech_bonus = {
+				name = CAS_bonus
+				ahead_reduction = 1
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+			}
+			add_tech_bonus = {
+				name = air_sup_bonus
+				bonus = 0.5
+				uses = 1
+				category = battlefield_support_tree
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAS_bonus
+				ahead_reduction = 1
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+			}
+			add_tech_bonus = {
+				name = air_sup_bonus
+				bonus = 0.5
+				uses = 1
+				category = battlefield_support_tree
+			}
+		}
+	}
+
+	focus = {
+		id = MEX_import_jet_technology
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = MEX_the_aztec_eagles }
+		x = 13
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_tech_bonus = {
+				name = jet_bonus
+				bonus = 0.6
+				ahead_reduction = 1
+				uses = 1
+				category = jet_technology
+			}
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_bonus
+				bonus = 0.6
+				ahead_reduction = 1
+				uses = 1
+				category = jet_technology
+			}
+		}
+	}
+	
+	### POLITICAL FOCUS ###
+	
+	focus = {
+		id = MEX_indigenous_land_rights
+		icon = GFX_goal_generic_demand_territory
+		x = 32
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			swap_ideas = {
+				remove_idea = segregation
+				add_idea = segregation_1
+			}
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = segregation
+				add_idea = segregation_1
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_authoritarism
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = MEX_indigenous_land_rights }
+		mutually_exclusive = { focus = MEX_democratic_values }
+		x = 29
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_political_power = 100
+			add_ideas = MEX_authoritarism
+		}
+
+		completion_reward = {
+			add_political_power = 100
+			add_ideas = MEX_authoritarism
+		}
+	}
+	
+	focus = {
+		id = MEX_democratic_values
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = MEX_indigenous_land_rights }
+		mutually_exclusive = { focus = MEX_authoritarism }
+		x = 35
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_political_power = 100
+			add_ideas = MEX_democratic_values
+		}
+
+		completion_reward = {
+			add_political_power = 100
+			add_ideas = MEX_democratic_values
+		}
+	}
+	
+	focus = {
+		id = MEX_stablish_the_parlament
+		icon = GFX_goal_generic_alliance
+		prerequisite = { focus = MEX_democratic_values }
+		mutually_exclusive = { focus = MEX_home_of_the_revolution }
+		x = 37
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			MEX = { country_event = { id = mexico.17 } }
+			#set_cosmetic_tag = EMP_MEX
+		}
+		
+		completion_reward = {
+			MEX = { country_event = { id = mexico.17 } }
+			#set_cosmetic_tag = EMP_MEX
+		}
+	}
+	
+	focus = {
+		id = MEX_home_of_the_revolution
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = MEX_democratic_values }
+		mutually_exclusive = { focus = MEX_stablish_the_parlament }
+		x = 35
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+		}
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_war_on_europe_debate
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = MEX_war_time_studies focus = MEX_compromise_with_indigenous_population }
+		x = 36
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			set_rule = { can_send_volunteers = yes }
+			add_ideas = war_debate
+		}
+		
+		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
+			add_ideas = war_debate
+		}
+	}
+	
+	focus = {
+		id = MEX_compromise_with_indigenous_population
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = MEX_stablish_the_parlament focus = MEX_home_of_the_revolution }
+		x = 37
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			remove_ideas = segregation_1
+		}
+
+		completion_reward = {
+			remove_ideas = segregation_1
+		}
+	}
+	
+	focus = {
+		id = MEX_war_time_studies
+		icon = GFX_focus_research
+		prerequisite = { focus = MEX_stablish_the_parlament focus = MEX_home_of_the_revolution }
+		x = 35
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_research_slot = 1
+		}
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = MEX_denounce_german_actions
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = MEX_war_on_europe_debate }
+		mutually_exclusive = { focus = MEX_our_own_sphere }
+		x = 37
+		y = 5
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+			hidden_effect = {
+				set_global_flag = MEX_nazi_enemy
+			}
+		}
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+			hidden_effect = {
+				set_global_flag = MEX_nazi_enemy
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_our_own_sphere
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = MEX_war_on_europe_debate }
+		mutually_exclusive = { focus = MEX_denounce_german_actions }
+		x = 35
+		y = 5
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			set_rule = { can_create_factions = yes }
+		}
+		
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+		}
+	}
+	
+	focus = {
+		id = MEX_reconcile_with_americans
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = MEX_our_own_sphere }
+		x = 35
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+			country_exists = USA
+			any_country = {
+				original_tag = MEX
+				has_government = democratic
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		
+		complete_tooltip = { 
+			USA = {
+				add_opinion_modifier = { target = MEX modifier = mexico_befriend_usa }
+			}
+		}
+		
+		completion_reward = {
+			USA = {
+				add_opinion_modifier = { target = MEX modifier = mexico_befriend_usa }
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_allience_with_the_usa
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = MEX_reconcile_with_americans }
+		x = 35
+		y = 7
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+	
+		available = {
+			is_puppet = no
+			is_in_faction = no
+	 		NOT = { has_war_with = USA }
+	 		has_government = democratic
+	 		USA = {
+	 			exists = yes
+	 			has_government = democratic
+				is_in_faction = no
+	 		}
+		}
+		
+		complete_tooltip = {
+			set_rule = { can_create_factions = yes }
+			if = {
+				limit = { is_in_faction = no }
+				create_faction = "NAFTA"
+			}
+			USA = { country_event = { id = mexico.18 } }
+			hidden_effect = {
+				news_event = { hours = 6 id = news.211}
+			}
+		}
+		
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			if = {
+				limit = { is_in_faction = no }
+				create_faction = "NAFTA"
+			}
+			USA = { country_event = { id = mexico.18 } }
+			hidden_effect = {
+				news_event = { hours = 6 id = news.211}
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_invite_canada
+		icon = GFX_goal_generic_improve_relations
+		available = { is_puppet = no }
+	 	prerequisite = { focus = MEX_allience_with_the_usa }
+	 	bypass = {
+	 		CAN = {
+	 			OR = {
+	 				exists = no
+	 				is_puppet = yes
+	 				has_war_with = MEX
+	 			}
+	 		}
+	 	}
+		x = 35
+		y = 8
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		
+		complete_tooltip = 
+			CAN = { country_event = mexico.19 }
+		}
+		
+		completion_reward = {
+			CAN = { country_event = mexico.19 }
+		}
+	}
+	
+	focus = {
+		id = MEX_join_britain
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		prerequisite = { focus = MEX_denounce_german_actions }
+		x = 37
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			is_puppet = no
+			is_in_faction = no
+	 		NOT = { has_war_with = ENG }
+	 		has_government = democratic
+	 		ENG = {
+	 			exists = yes
+	 			has_government = democratic
+ 				is_faction_leader = yes
+	 		}
+		}
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			ENG = { country_event = { id = mexico.12 } }
+		}
+		
+		completion_reward = {
+			ENG = { country_event = { id = mexico.12 } }
+		}
+	}
+	
+	focus = {
+		id = MEX_commonwealth_research
+		icon = GFX_goal_tfv_generic_tech_sharing
+		prerequisite = { focus = MEX_join_britain }
+		x = 37
+		y = 7
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		available = {
+			is_in_faction_with = ENG
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_to_tech_sharing_group = commonwealth_research
+		}
+
+		completion_reward = {
+			add_to_tech_sharing_group = commonwealth_research
+		}
+	}
+	
+	focus = {
+		id = MEX_the_third_way
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = MEX_authoritarism }
+		mutually_exclusive = { focus = MEX_internacionalism  }
+		x = 27
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			swap_ideas = {
+				remove_idea = MEX_authoritarism
+				add_idea = nationalism
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MEX_authoritarism
+				add_idea = nationalism
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_internacionalism
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = MEX_authoritarism }
+		mutually_exclusive = { focus = MEX_the_third_way }
+		x = 31
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			swap_ideas = {
+				remove_idea = MEX_authoritarism
+				add_idea = internationalism
+			}
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MEX_authoritarism
+				add_idea = internationalism
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_empower_working_class
+		icon = GFX_goal_generic_soviet_construction
+		prerequisite = { focus = MEX_internacionalism }
+		x = 33
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_ideas = MEX_empower_working_class
+			add_political_power = 150
+		}
+
+		completion_reward = {
+			add_ideas = MEX_empower_working_class
+			add_political_power = 150
+		}
+	}
+	
+	focus = {
+		id = MEX_political_commissars
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = MEX_integrate_indigenous_population }
+		available = {
+		}
+		x = 33
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = political_commissars_focus
+			add_political_power = 200
+		}
+	}
+	
+	focus = {
+		id = MEX_the_permanent_revolution
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = MEX_political_commissars }
+		mutually_exclusive = { focus = MEX_join_comintern }
+		x = 33
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			is_puppet = no
+			is_in_faction = no
+	 		OR = {
+	 			has_government = communism
+	 			communism > 0.4
+	 		}
+			NOT = { has_global_flag = trotsky_dead }
+		}
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			country_event = { id = mexico.40 }
+		}
+		
+		completion_reward = {
+			country_event = { id = mexico.40 }
+		}
+	}
+	
+	focus = {
+		id = MEX_red_america
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = MEX_the_permanent_revolution }
+		x = 33
+		y = 7
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		
+		complete_tooltip = {
+			GUA = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			} 
+			ELS = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			HON = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			NIC = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			COS = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			"PAN" = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}			
+			CUB = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			HAI = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			DOM = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			CAN =  {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			COL = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			VEN = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			ECU = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			PRU = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			BRA = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			BOL = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			PAR = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			URG = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			ARG = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			CHL = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+		every_other_country = {
+			limit = { 
+				NOT = { has_country_flag = usa_influence_fired }
+				OR = {
+					has_idea = american_influence_defence_communism
+					has_idea = american_influence_drift_communism
+				}
+			}
+			country_event = { id = usa.21 }
+		}
+			add_political_power = 200
+		}
+
+		completion_reward = {
+			GUA = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			} 
+			ELS = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			HON = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			NIC = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			COS = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			"PAN" = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}			
+			CUB = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			HAI = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			DOM = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			CAN =  {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			COL = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			VEN = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			ECU = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			PRU = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			BRA = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			BOL = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			PAR = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			URG = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			ARG = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+			CHL = {
+				if = {
+					limit = { has_government = communism }
+					add_ideas = american_influence_defence_communism
+				}
+				if = {
+					limit = { NOT = { has_government = communism } }
+					add_ideas = american_influence_drift_communism
+				}				
+			}
+		every_other_country = {
+			limit = { 
+				NOT = { has_country_flag = usa_influence_fired }
+				OR = {
+					has_idea = american_influence_defence_communism
+					has_idea = american_influence_drift_communism
+				}
+			}
+			country_event = { id = usa.21 }
+		}
+			add_political_power = 200
+		}
+	}
+	
+	focus = {
+		id = MEX_join_comintern
+		icon = GFX_goal_generic_war_with_comintern
+		prerequisite = { focus = MEX_socialist_education }
+		mutually_exclusive = { focus = MEX_the_permanent_revolution }
+		x = 31
+		y = 6
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {			
+			is_puppet = no
+			is_in_faction = no
+	 		NOT = { has_war_with = SOV }
+	 		OR = {
+	 			has_government = communism
+	 			communism > 0.4
+	 		}
+	 		
+	 		SOV = {
+	 			exists = yes
+	 			has_government = communism
+ 				is_faction_leader = yes
+	 		}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			SOV = { 
+				country_event = { id = mexico.13 }
+			}
+		}
+
+		completion_reward = {
+			SOV = { 
+				country_event = { id = mexico.13 }
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_soviet_research_treaty
+		icon = GFX_goal_tfv_generic_tech_sharing
+		prerequisite = { focus = MEX_join_comintern }
+		x = 31
+		y = 7
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			SOV = { 
+				exists = yes
+				is_puppet = no
+				}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			SOV = {
+				custom_effect_tooltip = needs_approval
+				country_event = { id = mexico.14 }
+			}
+		}
+
+		completion_reward = {
+			SOV = {
+				custom_effect_tooltip = needs_approval
+				country_event = { id = mexico.14 }
+			}
+		}
+
+	}
+	
+	focus = {
+		id = MEX_anti_imperialism_policy
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		prerequisite = { focus = MEX_red_america focus = MEX_soviet_research_treaty }
+		x = 32
+		y = 8
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 34
+			modifier = {
+				OR = {
+					SOV = { has_war_with = ENG }
+					SOV = { has_war_with = FRA }
+					SOV = { has_war_with = USA }
+					SOV = { has_war_with = HOL }
+				}
+				factor = 20 #now is the time to strike!
+			}
+		}
+
+		available = {
+			is_subject = no
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			ENG = { 
+					add_opinion_modifier = { target = MEX modifier = SAF_anti_colonialist_crusaders }
+			}
+			FRA = { 
+			 		add_opinion_modifier = { target = MEX modifier = SAF_anti_colonialist_crusaders } 
+			}
+			HOL = { 
+			 		add_opinion_modifier = { target = MEX modifier = SAF_anti_colonialist_crusaders } 
+			}
+			USA = { 
+			 		add_opinion_modifier = { target = MEX modifier = SAF_anti_colonialist_crusaders } 
+			}
+		}
+
+		completion_reward = {
+			ENG = { 
+					add_opinion_modifier = { target = MEX modifier = SAF_anti_colonialist_crusaders }
+			}
+			FRA = { 
+			 		add_opinion_modifier = { target = MEX modifier = SAF_anti_colonialist_crusaders } 
+			}
+			HOL = { 
+			 		add_opinion_modifier = { target = MEX modifier = SAF_anti_colonialist_crusaders } 
+			}
+			USA = { 
+			 		add_opinion_modifier = { target = MEX modifier = SAF_anti_colonialist_crusaders } 
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_socialist_education
+		icon = GFX_focus_research
+		prerequisite = { focus = MEX_internacionalism }
+		x = 31
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_research_slot = 1
+		}
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = MEX_independence_for_Puerto_Rico
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = MEX_anti_imperialism_policy }
+		available = {
+			is_puppet = no
+		}
+		cancel = {
+			OR = {
+				is_puppet = yes
+			}
+		}
+		cancel_if_invalid = no
+		x = 29
+		y = 9
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		
+		complete_tooltip = {
+			if = {
+				USA = {
+					owns_state = 686
+					country_event = mexico.4
+				}				
+			}
+		}
+		
+		completion_reward = {
+			if = {
+				USA = {
+					owns_state = 686
+					country_event = mexico.4
+				}				
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_the_antilles
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = MEX_anti_imperialism_policy }
+		available = {
+			is_puppet = no
+		}
+		cancel = {
+			OR = {
+				is_puppet = yes
+			}
+		}
+		cancel_if_invalid = no
+		x = 31
+		y = 9
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		
+		complete_tooltip = {
+			if = {
+				ENG = {
+					owns_state = 308
+					owns_state = 311
+					owns_state = 689
+					owns_state = 690					
+					owns_state = 691
+					owns_state = 692
+					owns_state = 693
+					country_event = mexico.6
+				}
+				FRA = {
+					owns_state = 694
+					country_event = mexico.8
+				}
+			}
+		}
+		
+		completion_reward = {
+			if = {
+				ENG = {
+					owns_state = 308
+					owns_state = 311
+					owns_state = 689
+					owns_state = 690					
+					owns_state = 691
+					owns_state = 692
+					owns_state = 693
+					country_event = mexico.6
+				}
+				FRA = {
+					owns_state = 694
+					country_event = mexico.8
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_free_guyanas
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = MEX_anti_imperialism_policy }
+		available = {
+			is_puppet = no
+		}
+		cancel = {
+			OR = {
+				is_puppet = yes
+			}
+		}
+		cancel_if_invalid = no
+		x = 33
+		y = 9
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		complete_tooltip = {
+			if = {
+				ENG = {
+					owns_state = 687
+					country_event = mexico.11
+				}
+				FRA = {
+					owns_state = 310
+					country_event = mexico.12
+				}
+				HOL = {
+					owns_state = 309
+					country_event = mexico.13
+				}
+			}
+		}
+		
+		completion_reward = {
+			if = {
+				ENG = {
+					owns_state = 687
+					country_event = mexico.11
+				}
+				FRA = {
+					owns_state = 310
+					country_event = mexico.12
+				}
+				HOL = {
+					owns_state = 309
+					country_event = mexico.13
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_viva_la_revolución
+		icon = GFX_goal_generic_attack_allies
+		prerequisite = { focus = MEX_independence_for_Puerto_Rico }
+		x = 29
+		y = 10
+		cost = 10
+
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = USA
+			}
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = USA
+			}
+			hidden_effect = {
+				news_event = { hours = 6 id = news.213 }
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_integrate_indigenous_population
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = MEX_empower_working_class }
+		x = 33
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			swap_ideas = {
+				remove_idea = segregation_1
+				add_idea = MEX_integrated_minorities
+			}
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = segregation_1
+				add_idea = MEX_integrated_minorities
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_values_of_old
+		icon = GFX_goal_generic_alliance
+		prerequisite = { focus = MEX_the_third_way }
+		mutually_exclusive = { focus = MEX_the_synarchist_party }
+		x = 25
+		y = 4
+		cost = 10
+		
+		available = {
+			any_country = {
+				original_tag = MEX
+				has_government = fascism
+			}
+		}
+			
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			MEX = { country_event = { id = mexico.22 } }
+		}
+
+		completion_reward = {
+			MEX = { country_event = { id = mexico.22 } }
+		}
+	}
+	
+	focus = {
+		id = MEX_the_synarchist_party
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = MEX_the_third_way }
+		mutually_exclusive = { focus = MEX_values_of_old }
+		x = 27
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+		}
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_support_american_fascists
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = MEX_values_of_old focus = MEX_the_synarchist_party }
+		mutually_exclusive = { focus = MEX_prepare_for_the_reconquista }
+		x = 25
+		y = 5
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+			country_exists = USA
+			any_country = {
+				original_tag = MEX
+				has_government = fascism
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		
+		complete_tooltip = {
+			USA = {
+				add_ideas = fascist_influence
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.05
+				}
+			}
+		}
+
+		completion_reward = {
+			USA = {
+				add_ideas = fascist_influence
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.05
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_befriend_canada
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = MEX_support_american_fascists }
+		x = 24
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			country_exists = CAN
+			any_country = {
+				original_tag = MEX
+				has_government = fascism
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		
+		bypass = {
+			OR = {
+				CAN = { is_in_faction_with = MEX }
+				NOT = { country_exists = CAN }
+			}
+		}
+		
+		complete_tooltip = {
+			CAN = {
+				add_ideas = mexico_befriend_canada
+				add_ideas = fascist_influence
+			}
+		}
+
+		completion_reward = {
+			CAN = {
+				add_ideas = mexico_befriend_canada
+				add_ideas = fascist_influence
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_pan_americanism
+		available = {
+			is_puppet = no
+			is_in_faction = no
+	 		NOT = { has_war_with = USA }
+	 		has_government = fascism
+			USA = {
+				OR = {
+					has_government = fascism
+					fascism > 0.4
+				}
+			}
+			CAN = {
+				is_subject = no
+				OR = {
+					has_government = fascism
+					fascism > 0.4
+				}
+			}
+		}
+		prerequisite = { focus = MEX_befriend_canada }
+		x = 23
+		y = 7
+		cost = 10
+		icon = GFX_goal_anschluss
+		ai_will_do = {
+			factor = 2.5
+		}
+		
+		complete_tooltip = {
+			set_rule = { can_create_factions = yes }
+			if = {
+				limit = { is_in_faction = no }
+				create_faction = "pan_american_league"
+			}
+			add_political_power = 150
+			add_national_unity = 0.05
+			#hidden_effect = {
+			#	news_event = { hours = 6 id = news.211}
+			#}
+			CAN = { country_event = mexico.3 }
+			USA = { country_event = mexico.3 }
+		}
+		
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			if = {
+				limit = { is_in_faction = no }
+				create_faction = "pan_american_league"
+			}
+			add_political_power = 150
+			add_national_unity = 0.05
+			#hidden_effect = {
+			#	news_event = { hours = 6 id = news.211}
+			#}
+			CAN = { country_event = mexico.3 }
+			USA = { country_event = mexico.3 }
+		}
+	}
+	
+	focus = {
+		id = MEX_prepare_for_the_reconquista
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = MEX_values_of_old focus = MEX_the_synarchist_party }
+		mutually_exclusive = { focus = MEX_support_american_fascists }
+		x = 27
+		y = 5
+		cost = 10
+		bypass = {
+			313 = { is_owned_by = MEX }
+			312 = { is_owned_by = MEX }
+			314 = { is_owned_by = MEX }
+			317 = { is_owned_by = MEX }
+			374 = { is_owned_by = MEX }
+			375 = { is_owned_by = MEX }
+			376 = { is_owned_by = MEX }
+			377 = { is_owned_by = MEX }
+			378 = { is_owned_by = MEX }
+			379 = { is_owned_by = MEX }
+			380 = { is_owned_by = MEX }
+			382 = { is_owned_by = MEX }
+		}
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			set_rule = { can_send_volunteers = yes }
+			army_experience = 20
+			add_ideas = MEX_reconquista
+		}
+		
+		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
+			army_experience = 20
+			add_ideas = MEX_reconquista
+		}
+	}
+	
+	focus = {
+		id = MEX_repress_the_indigenous_population
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = MEX_the_third_way }
+		x = 26
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			swap_ideas = {
+				remove_idea = segregation_1
+				add_idea = MEX_repressed_minorities
+			}
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = segregation_1
+				add_idea = MEX_repressed_minorities
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_central_america 
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = MEX_seek_alliance_with_germany focus = MEX_mexican_protagonism }
+		x = 27
+		y = 7
+		cost = 10
+		available = {
+			is_puppet = no
+		}
+		cancel = {
+			is_puppet = yes
+		}
+		
+		available_if_capitulated = no
+		
+		bypass = {
+			313 = { is_owned_by = MEX }
+			312 = { is_owned_by = MEX }
+			314 = { is_owned_by = MEX }
+			317 = { is_owned_by = MEX }
+		}
+		
+		complete_tooltip = {
+			MEX = {
+				country_event = { id = mexico.39 days = 1 }
+			}
+		}
+
+		completion_reward = {
+			MEX = {
+				country_event = { id = mexico.39 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = MEX_demand_american_territories
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = MEX_central_america }
+		x = 27
+		y = 8
+		cost = 10
+		available = {
+			is_puppet = no
+		}
+		cancel = {
+		}
+		
+		available_if_capitulated = no
+		
+		bypass = {
+			374 = { is_owned_by = MEX }
+			375 = { is_owned_by = MEX }
+			376 = { is_owned_by = MEX }
+			377 = { is_owned_by = MEX }
+			378 = { is_owned_by = MEX }
+			379 = { is_owned_by = MEX }
+			380 = { is_owned_by = MEX }
+			382 = { is_owned_by = MEX }
+		}
+		
+		complete_tooltip = {
+			USA = {
+				country_event = { id = mexico.34 days = 1 }
+			}
+		}
+
+		completion_reward = {
+			USA = {
+				country_event = { id = mexico.34 days = 1 }
+			}
+		}
+	}
+
+	focus = {
+		id = MEX_seek_alliance_with_germany
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = MEX_prepare_for_the_reconquista }
+		mutually_exclusive = { focus = MEX_mexican_protagonism }
+		available = {
+			is_puppet = no
+			is_in_faction = no
+	 		NOT = { has_war_with = GER }
+	 		has_government = fascism
+	 		GER = {
+	 			exists = yes
+	 			has_government = fascism
+ 				is_faction_leader = yes
+	 		}
+		}
+		x = 26
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			GER = { country_event = { id = mexico.11 days = 1 } }
+		}
+		
+		completion_reward = {
+			GER = { country_event = { id = mexico.11 days = 1 } }
+		}
+	}
+	
+	focus = {
+		id = MEX_mexican_protagonism
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = MEX_prepare_for_the_reconquista }
+		mutually_exclusive = { focus = MEX_seek_alliance_with_germany }
+		x = 28
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			set_rule = { can_create_factions = yes }
+		}
+		
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+		}
+	}
+	
+	focus = {
+		id = MEX_german_technology
+		icon = GFX_goal_tfv_generic_tech_sharing
+		prerequisite = { focus = MEX_seek_alliance_with_germany }
+		x = 25
+		y = 7
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		available = {
+			
+			is_in_faction_with = GER
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			GER = { add_to_tech_sharing_group = axis_research }
+			add_to_tech_sharing_group = axis_research
+		}
+
+		completion_reward = {
+			GER = { add_to_tech_sharing_group = axis_research }
+			add_to_tech_sharing_group = axis_research
+		}
+	}
+	
+	focus = {
+		id = MEX_technology_sharing
+		icon = GFX_focus_research
+		prerequisite = { focus = MEX_seek_alliance_with_germany focus = MEX_mexican_protagonism }
+		available = {
+			is_in_faction = yes
+			OR = {
+				has_war = yes
+				num_of_factories > 50
+			}
+		}
+		x = 29
+		y = 7
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			add_research_slot = 1
+		}
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+}
+	
+	
+	
+
+
+	
+	
