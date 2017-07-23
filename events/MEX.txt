@@ -1,0 +1,2238 @@
+﻿###########################
+# Mexico Events
+###########################
+
+add_namespace = mexico
+
+
+### Election Events ###
+
+# Election of 1940
+country_event = {
+	id = mexico.1
+	title = mexico.1.t
+	desc = mexico.1.d
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = MEX
+		ruling_party = democratic
+		date > 1940.1.1
+		date < 1941.1.1
+	}
+	
+	option = {
+		name = mexico.1.a
+		ai_chance = {
+			factor = 80
+		}
+		add_ideas = MEX_unidad_nacional
+		create_country_leader = {
+			name = "Manuel Avila Camacho"
+			desc = "POLITICS_LAZARO_CARDENAS_DESC"
+			picture = "CamachoMEX.dds"
+			expire = "1965.1.1"
+			ideology = socialism
+		}
+		hidden_effect = {
+			set_country_flag = MEX_camacho_president
+		}
+	}
+
+	#option = { 
+	#	name = mexico.1.b
+	#	ai_chance = {
+	#		factor = 0
+	#		modifier = {
+	#			factor = 0
+	#			is_historical_focus_on = yes
+	#		}
+	#	}		
+	#	set_party_name = { ideology = democratic long_name = MEX_opposition_party name = MEX_opposition_party }
+	#	create_country_leader = {
+	#		name = "Manuel Gómez Morín"
+	#		desc = "POLITICS_LAZARO_CARDENAS_DESC"
+	#		picture = "MorinMEX.dds"
+	#		expire = "1965.1.1"
+	#		ideology = liberalism
+	#		}
+	#	}
+	option = {
+		name = mexico.1.c
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_party_name = { ideology = democratic long_name = MEX_opposition_party_long name = MEX_opposition_party }
+		add_political_power = 150
+		create_country_leader = {
+			name = "Juan Andrew Almazán"
+			desc = "POLITICS_LAZARO_CARDENAS_DESC"
+			picture = "AlmazanMEX.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			}
+		hidden_effect = {
+			set_country_flag = MEX_almazan_president
+		}	
+	}	
+}
+	
+# Election of 1946 - camacho wins
+country_event = {
+	id = mexico.2
+	title = mexico.2.t
+	desc = mexico.2.d
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = MEX
+		ruling_party = democratic
+		date > 1946.1.1
+		date < 1947.1.1
+		has_idea = MEX_unidad_nacional
+	}
+	
+	option = { 	
+		name = mexico.2.a
+		ai_chance = {
+			factor = 80
+		}
+		set_party_name = { ideology = democratic long_name = MEX_opposition2_party_long name = MEX_opposition2_party }
+		add_ideas = MEX_justicia_social
+		create_country_leader = {
+			name = "Miguel Alemán Valdés"
+			desc = "POLITICS_LAZARO_CARDENAS_DESC"
+			picture = "MiguelMEX.dds"
+			expire = "1965.1.1"
+			ideology = socialism
+		}
+	}
+
+	option = { 
+		name = mexico.2.b
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}		
+		set_party_name = { ideology = democratic long_name = MEX_opposition3_party_long name = MEX_opposition3_party }
+		add_political_power = 150
+		create_country_leader = {
+			name = "Ezequiel Padilla Peñaloza"
+			desc = "POLITICS_LAZARO_CARDENAS_DESC"
+			picture = "EzequielMEX.dds"
+			expire = "1965.1.1"
+			ideology = liberalism
+			}
+		}
+	}
+	
+country_event = {
+	id = mexico.3
+	title = mexico.3.t
+	desc = mexico.3.d
+	picture = GFX_report_event_worried_french
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.3.a
+		ai_chance = { factor = 90 }
+		MEX = {
+			country_event = mexico.4
+			add_to_faction = ROOT
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = "MEX"
+			value = 200
+		}
+	}
+
+	option = {
+		name = mexico.3.b
+		ai_chance = { factor = 10 }
+		MEX = { country_event = mexico.5 }
+	}
+}
+
+country_event = {
+	id = mexico.4
+	title = mexico.4.t
+	desc = mexico.4.d
+	picture = GFX_report_event_hitler_parade
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = mexico.4.a
+		ai_chance = {
+			base = 30
+		}
+		MEX = {
+			country_event = { hours = 2 id = mexico.5 }
+		}
+	}
+	#option = { # Refuse
+		#name = mexico.4.b
+		#ai_chance = {
+		#	base = 10			
+		#	modifier = {
+		#		factor = 0
+		#		GER = { has_army_size = { size > 39 } }
+		#		is_historical_focus_on = yes
+		#	}
+		#	modifier = {
+		#		add = 20
+		#		GER = { has_army_size = { size < 30 } }
+		#	}
+		#}
+		#MEX = {
+		#	add_opinion_modifier = { target = ROOT modifier = GER_anschluss_rejected }
+		#	country_event = { hours = 2 id = mexico.6 }
+		#	}
+		#}
+}
+
+country_event = {
+	id = mexico.5
+	title = mexico.5.t
+	desc = mexico.5.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.5.a
+		686 = {
+			if = {
+				limit = { is_owned_by = USA }
+			}
+		}
+		transfer_state = 686
+		add_political_power = -100
+	}
+	
+	option = {
+		name = mexico.5.b
+		if = {
+			limit = {
+				686 = {
+					OR = {
+						is_owned_by = USA
+						is_owned_by = MEX
+					}
+				}
+			}
+			PUE = { transfer_state = 686 }
+		}
+		add_political_power = 75
+	}
+	
+	option = {
+		name = mexico.5.c
+		if = {
+			limit = {
+				686 = {
+					OR = {
+						is_owned_by = USA
+						is_owned_by = MEX
+					}
+				}
+			}
+			PUE = { transfer_state = 686 }
+		}
+		puppet = PUE
+		add_political_power = 100
+	}
+	
+}
+
+country_event = {
+	id = mexico.6
+	title = mexico.6.t
+	desc = mexico.6.d
+	picture = GFX_report_event_hitler_parade
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = mexico.6.a
+		ai_chance = {
+			base = 30
+		}
+		MEX = {
+			country_event = { hours = 2 id = mexico.7 }
+		}
+	}
+	#option = { # Refuse
+		#name = mexico.6.b
+		#ai_chance = {
+		#	base = 10			
+		#	modifier = {
+		#		factor = 0
+		#		GER = { has_army_size = { size > 39 } }
+		#		is_historical_focus_on = yes
+		#	}
+		#	modifier = {
+		#		add = 20
+		#		GER = { has_army_size = { size < 30 } }
+		#	}
+		#}
+		#MEX = {
+		#	add_opinion_modifier = { target = ROOT modifier = GER_anschluss_rejected }
+		#	country_event = { hours = 2 id = mexico.6 }
+		#	}
+		#}
+}
+
+country_event = {
+	id = mexico.7
+	title = mexico.7.t
+	desc = mexico.7.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.7.a
+		308 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		311 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		689 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		690 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		691 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		692 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		693 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		transfer_state = 308
+		transfer_state = 311
+		transfer_state = 689
+		transfer_state = 690
+		transfer_state = 691
+		transfer_state = 692
+		transfer_state = 693
+		add_political_power = -150
+	}
+	
+	option = {
+		name = mexico.7.b
+		308 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		311 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		689 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		690 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		691 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		692 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		693 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		WIF = { transfer_state = 308 }
+		WIF = { transfer_state = 311 }
+		WIF = { transfer_state = 689 }
+		WIF = { transfer_state = 690 }
+		WIF = { transfer_state = 691 }
+		WIF = { transfer_state = 692 }
+		WIF = { transfer_state = 693 }
+		add_political_power = 50
+	}
+	
+	option = {
+		name = mexico.7.c
+		308 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		311 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		689 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		690 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		691 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		692 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		693 = {
+			if = {
+				limit = { is_owned_by = ENG }
+			}
+		}
+		puppet = WIF
+		WIF = { transfer_state = 308 }
+		WIF = { transfer_state = 311 }
+		WIF = { transfer_state = 689 }
+		WIF = { transfer_state = 690 }
+		WIF = { transfer_state = 691 }
+		WIF = { transfer_state = 692 }
+		WIF = { transfer_state = 693 }
+		add_political_power = 100
+	}
+	
+}
+
+country_event = {
+	id = mexico.8
+	title = mexico.8.t
+	desc = mexico.8.d
+	picture = GFX_report_event_hitler_parade
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = mexico.8.a
+		ai_chance = {
+			base = 30
+		}
+		MEX = {
+			country_event = { hours = 2 id = mexico.9 }
+		}
+	}
+	#option = { # Refuse
+		#name = mexico.8.b
+		#ai_chance = {
+		#	base = 10			
+		#	modifier = {
+		#		factor = 0
+		#		GER = { has_army_size = { size > 39 } }
+		#		is_historical_focus_on = yes
+		#	}
+		#	modifier = {
+		#		add = 20
+		#		GER = { has_army_size = { size < 30 } }
+		#	}
+		#}
+		#MEX = {
+		#	add_opinion_modifier = { target = ROOT modifier = GER_anschluss_rejected }
+		#	country_event = { hours = 2 id = mexico.6 }
+		#	}
+	#}
+}
+
+country_event = {
+	id = mexico.9
+	title = mexico.9.t
+	desc = mexico.9.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.9.a
+		693 = {
+			if = {
+				limit = { is_owned_by = USA }
+			}
+		}
+		transfer_state = 693
+		add_political_power = -50
+	}
+	
+	option = {
+		name = mexico.9.b
+		if = {
+			limit = {
+				686 = {
+					OR = {
+						is_owned_by = USA
+						is_owned_by = MEX
+					}
+				}
+			}
+			WIF = { transfer_state = 693 }
+		}
+		add_political_power = 25
+	}
+	
+	option = {
+		name = mexico.5.c
+		if = {
+			limit = {
+				693 = {
+					OR = {
+						is_owned_by = USA
+						is_owned_by = MEX
+					}
+				}
+			}
+			WIF = { transfer_state = 693 }
+		}
+		puppet = WIF
+		add_political_power = 50
+	}
+	
+}
+
+country_event = {
+	id = mexico.10
+	title = mexico.10.t
+	desc = mexico.10.d
+	picture = GFX_report_event_fascist_gathering
+	
+	is_triggered_only = yes
+
+	option = {
+		name = mexico.10.a
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+	}
+}
+
+###### factions events ######
+
+country_event = {
+	id = mexico.11
+	title = mexico.11.t
+	desc = mexico.11.d
+	picture = GFX_report_event_fascist_gathering
+
+	is_triggered_only = yes
+		
+	option = {
+		name = mexico.11.a
+		GER = { add_to_faction = MEX }
+		MEX = {
+			add_ai_strategy = {
+				type = alliance
+				id = "GER"
+				value = 200
+			}
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = news.182 }
+		}
+	}
+	option = {
+		name = mexico.11.b
+		ai_chance = { factor = 0 }
+		MEX = {
+			add_opinion_modifier = {
+				target = GER
+				modifier = GER_FRA_join_germany_reject
+			}
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = news.183 }
+		}
+	}
+}
+
+country_event = {
+	id = mexico.12
+	title = mexico.12.t
+	desc = mexico.12.d
+	picture = GFX_report_event_fascist_gathering
+
+	is_triggered_only = yes
+		
+	option = {
+		name = mexico.12.a
+		ENG = { add_to_faction = MEX }
+		MEX = {
+			add_ai_strategy = {
+				type = alliance
+				id = "ENG"
+				value = 200
+			}
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = news.182 }
+		}
+	}
+	option = {
+		name = mexico.12.b
+		ai_chance = { factor = 0 }
+		MEX = {
+			add_opinion_modifier = {
+				target = ENG
+				modifier = GER_FRA_join_germany_reject
+			}
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = news.183 }
+		}
+	}
+}
+
+country_event = {
+	id = mexico.13
+	title = mexico.13.t
+	desc = mexico.13.d
+	picture = GFX_report_event_fascist_gathering
+
+	is_triggered_only = yes
+		
+	option = {
+		name = mexico.13.a
+		SOV = { add_to_faction = MEX }
+		MEX = {
+			add_ai_strategy = {
+				type = alliance
+				id = "SOV"
+				value = 200
+			}
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = news.182 }
+		}
+	}
+	option = {
+		name = mexico.13.b
+		ai_chance = { factor = 0 }
+		MEX = {
+			add_opinion_modifier = {
+				target = SOV
+				modifier = GER_FRA_join_germany_reject
+			}
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = news.183 }
+		}
+	}
+}
+
+############ Research events #################
+
+country_event = {
+	id = mexico.14
+	title = mexico.14.t
+	desc = mexico.14.d
+	picture = GFX_report_event_generic_research_lab
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.14.a
+		
+		ai_chance = {
+			base = 100
+		}
+		
+		effect_tooltip = {
+			
+		}
+		
+		hidden_effect = {
+			MEX = {
+				country_event = { id = mexico.15 }
+			}
+		}
+	}
+	
+	option = {
+		name = mexico.14.b # SOV refuses
+		
+		ai_chance = {
+			base = 0
+		}
+		
+		hidden_effect = {
+			MEX = {
+				country_event = { id = mexico.16 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mexico.15
+	title = mexico.15
+	desc = mexico.15.d
+	picture = GFX_report_event_generic_research_lab
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.15.a
+		SOV = { add_to_tech_sharing_group = comintern_research }
+		add_to_tech_sharing_group = comintern_research
+	}
+}
+
+country_event = { ### soviet refuses research ###
+	id = mexico.16
+	title = mexico.16.t
+	desc = mexico.16.d
+	picture = GFX_report_event_generic_research_lab
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.16.a
+	}
+}
+
+country_event = { ### monarchist democratic ###
+	id = mexico.17
+	title = mexico.17.t
+	desc = mexico.17.d
+	picture = GFX_report_event_generic_research_lab
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.17.a
+		add_ideas = Maria_I
+		
+		hidden_effect = {
+			set_cosmetic_tag = EMP_MEX
+		}
+		
+	}
+	
+	option = {
+		name = mexico.17.b
+		
+		add_national_unity = -0.15
+		
+	}
+}
+
+country_event = {
+	id = mexico.18
+	title = mexico.18.t
+	desc = mexico.18.d
+	picture = GFX_report_event_worried_french
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.18.a
+		ai_chance = { factor = 90 }
+		MEX = {
+			country_event = mexico.20
+			add_to_faction = ROOT
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = "MEX"
+			value = 200
+		}
+	}
+
+	option = {
+		name = mexico.18.b
+		ai_chance = { factor = 10 }
+		MEX = { country_event = mexico.21 }
+	}
+}
+
+country_event = {
+	id = mexico.19
+	title = mexico.19.t
+	desc = mexico.19.d
+	picture = GFX_report_event_worried_french
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.19.a
+		ai_chance = { factor = 90 }
+		MEX = {
+			country_event = mexico.20
+			add_to_faction = ROOT
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = "MEX"
+			value = 200
+		}
+	}
+
+	option = {
+		name = mexico.19.b
+		ai_chance = { factor = 10 }
+		MEX = { country_event = mexico.21 }
+	}
+}
+
+# [Country] accepts
+country_event = {
+	id = mexico.20
+	title = mexico.20.t
+	desc = mexico.20.d
+	picture = GFX_report_event_soldiers_in_france
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.20.a
+		effect_tooltip = {
+			add_to_faction = FROM
+		}
+	}
+}
+
+# [Country] Refuses
+country_event = {
+	id = mexico.21
+	title = mexico.21.t
+	desc = mexico.21.d
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.21.a
+	}
+}
+
+country_event = { ### monarchist fascist ###
+	id = mexico.22
+	title = mexico.22.t
+	desc = mexico.22.d
+	picture = GFX_report_event_generic_research_lab
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.22.a
+		
+		create_country_leader = {
+			name = "Maria I"
+			desc = "POLITICS_LAZARO_CARDENAS_DESC"
+			picture = "MariaMEX.dds"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = {
+				MEX_empress
+			}
+		}
+		
+		hidden_effect = {
+			set_cosmetic_tag = EMP_MEX
+		}
+		
+	}
+	
+	option = {
+		name = mexico.22.b
+		add_ideas = Maria_I
+		
+		hidden_effect = {
+			set_cosmetic_tag = EMP_MEX
+		}
+		
+	}
+}
+
+# support republican spain
+country_event = {
+	id = mexico.23
+	title = mexico.23.t
+	desc = mexico.23.d
+	picture = GFX_report_event_german_volunteers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.23.a
+		
+		ai_chance = {
+			base = 45
+		}
+		
+		effect_tooltip = {
+			set_rule = { can_send_volunteers = yes }
+		}
+		
+		hidden_effect = {
+			MEX = {
+				set_rule = { can_send_volunteers = yes }
+				set_country_flag = MEX_spanish_volunteers
+				add_ideas = { MEX_support_spain }
+			}
+		}
+	}
+	
+	option = {
+		name = mexico.23.b
+		
+		ai_chance = {
+			base = 0
+		}
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+	
+# support nationalist spain
+country_event = {
+	id = mexico.24
+	title = mexico.24.t
+	desc = mexico.24.d
+	picture = GFX_report_event_german_volunteers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.24.a
+		
+		ai_chance = {
+			base = 45
+		}
+		
+		effect_tooltip = {
+			set_rule = { can_send_volunteers = yes }
+		}
+		
+		hidden_effect = {
+			MEX = {
+				set_rule = { can_send_volunteers = yes }
+				set_country_flag = MEX_spanish_volunteers
+				add_ideas = { MEX_support_spain }
+			}
+		}
+	}
+	
+	option = {
+		name = mexico.24.b
+		
+		ai_chance = {
+			base = 0
+		}
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#SAF support for spain
+country_event = {
+	id = mexico.25
+	title = mexico.25.t
+	desc = mexico.25.d
+	picture = GFX_report_event_german_volunteers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.25.a
+		
+		ai_chance = {
+			base = 45
+		}
+		
+		effect_tooltip = {
+			add_manpower = 40000
+		}
+		
+		hidden_effect = {
+			MEX = {
+				add_manpower = 40000
+			}
+		}
+	}
+	
+	option = {
+		name = mexico.25.b
+
+		ai_chance = {
+			base = 0
+		}
+		
+		hidden_effect = {
+		
+		}
+	}
+}
+
+# Election of 1946 - camacho loses
+country_event = {
+	id = mexico.26
+	title = mexico.26.t
+	desc = mexico.26.d
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = MEX
+		ruling_party = democratic
+		date > 1946.1.1
+		date < 1947.1.1
+		NOT = { has_idea = MEX_unidad_nacional }
+	}
+	
+	option = { 	
+		name = mexico.26.a
+		ai_chance = {
+			factor = 80
+		}
+		set_party_name = { ideology = democratic long_name = MEX_opposition2_party_long name = MEX_opposition2_party }
+		add_ideas = MEX_justicia_social
+		create_country_leader = {
+			name = "Miguel Alemán Valdés"
+			desc = "POLITICS_LAZARO_CARDENAS_DESC"
+			picture = "MiguelMEX.dds"
+			expire = "1965.1.1"
+			ideology = socialism
+		}
+	}
+
+	option = {
+		name = mexico.26.b
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_party_name = { ideology = democratic long_name = MEX_opposition3_party_long name = MEX_opposition3_party }
+		add_political_power = 150
+		create_country_leader = {
+			name = "Ezequiel Padilla Peñaloza"
+			desc = "POLITICS_LAZARO_CARDENAS_DESC"
+			picture = "EzequielMEX.dds"
+			expire = "1965.1.1"
+			ideology = liberalism
+		}
+	}
+}
+
+### Civil war events ###
+
+### assassination of cardenás
+
+country_event = {
+	id = mexico.27
+	title = mexico.27.t
+	desc = mexico.27.d
+	picture = GFX_report_event_german_reichstag_gathering
+	
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_global_flag = mexico_civil_war }
+		tag = MEX
+		AND = {
+			neutrality > 0.5
+			fascism < 0.2
+			communism < 0.2
+			ruling_party = democratic
+		}
+		date > 1938.6.1
+	}
+	
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = {
+		name = mexico.27.a
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = plutarco_exiled }
+				random_list = {
+					5 = { country_event = { hours = 6 id = mexico.28 } } # Conspiracy successful, Cardenás dead
+					95 = { country_event = { hours = 6 id = mexico.29 } } # Conspiracy defeated, Cardenás survives
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = plutarco_exiled } }
+				random_list = {
+					75 = { country_event = { hours = 6 id = mexico.28 } } # Conspiracy successful, Cardenás dead
+					25 = { country_event = { hours = 6 id = mexico.29 } } # Conspiracy defeated, Cardenás survives
+				}
+			}
+		}
+	}
+}
+
+### Conspiracy successful, Cardenás is dead
+country_event = {
+	id = mexico.28
+	title = mexico.28.t
+	desc = mexico.28.d
+	picture = GFX_report_event_europe_funeral
+	
+	is_triggered_only = yes
+	
+	option = { # Ignacio García Telléz 
+		name = mexico.28.a
+		kill_country_leader = yes
+		set_country_flag  = cardenas_dead
+		create_country_leader = {
+			name = "Ignacio García Telléz"
+			desc = "POLITICS_HEINRICH_HIMMLER_DESC"
+			picture = "IgnacioMEX.dds"
+			expire = "1965.1.1"
+			ideology = liberalism
+			traits = {
+			}
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = news.28 }
+		}
+	}
+	option = { # Antonio Villareal
+		name = mexico.28.b
+		kill_country_leader = yes
+		set_country_flag = cardenas_dead
+		create_country_leader = {
+			name = "Antonio I. Villarreal"
+			desc = "POLITICS_HERMANN_GORING_DESC"
+			picture = "AntonioMEX.dds"
+			expire = "1965.1.1"
+			ideology = socialism
+			traits = {
+			}
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = news.29 }
+		}
+	}
+}
+
+# Conspiracy defeated, Cardenás survives
+country_event = {
+	id = mexico.29
+	title = mexico.29.t
+	desc = mexico.29.d
+	picture = GFX_report_event_hitler_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.29.a
+		set_country_flag = cardenas_alive
+		hidden_effect = {
+			news_event = { hours = 6 id = news.30 }
+		}
+	}
+}
+
+### massive civil war, plutarco not exiled, cardenas dead
+country_event = {
+	id = mexico.30
+	title = mexico.30.t
+	desc = mexico.30.d
+	picture = GFX_report_event_german_reichstag_bombed
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MEX
+		has_government = democratic
+		AND = {
+			NOT = { has_country_flag = plutarco_exiled }
+			has_country_flag = cardenas_dead
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = { # plutarco
+		name = mexico.30.a
+		trigger = { is_ai = no }
+		set_global_flag = mexico_civil_war
+		
+		hidden_effect = {
+			set_capital = 479
+		
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = democratic
+				size = 0.3
+				capital = 277
+				states = { 277 477 485 }
+			}
+			
+			random_other_country = {
+				limit = {
+					original_tag = MEX
+					has_government = democratic
+				}
+				set_equipment_fraction = 0.3
+				set_national_unity = 0.7
+				add_popularity = {
+					ideology = neutrality
+					popularity = -1
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.12
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.21
+				}
+			}
+			
+			news_event = { hours = 6 id = news.63 }
+			
+			set_equipment_fraction = 0.3
+			set_national_unity = 0.7
+			add_popularity = {
+				ideology = neutrality
+				popularity = 1
+			}
+		}
+		
+		custom_effect_tooltip = plutarco_chosen
+		
+	}
+	
+	
+	option = { # democrats
+		name = mexico.30.b
+		trigger = { is_ai = no }
+		set_global_flag = mexico_civil_war
+		
+		hidden_effect = {
+		
+			start_civil_war = {
+				ruling_party = democratic
+				ideology = neutrality
+				size = 0.7
+				capital = 479
+				states = { 474 475 476 478 479 480 481 482 483 484 }
+			}
+			
+			random_other_country = {
+				limit = {
+					original_tag = MEX
+					has_government = neutrality
+				}
+				set_equipment_fraction = 0.3
+				set_national_unity = 0.7
+				add_popularity = {
+					ideology = neutrality
+					popularity = 1
+				}
+			}
+			
+			news_event = { hours = 6 id = news.63 }
+			
+			set_equipment_fraction = 0.3
+			set_national_unity = 0.7	
+			add_popularity = {
+				ideology = neutrality
+				popularity = -1
+			}
+			
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.12
+			}
+			
+			add_popularity = {
+				ideology = communism
+				popularity = 0.21
+			}
+			
+		}
+		
+		custom_effect_tooltip = democrat_chosen
+		
+	}
+}
+
+### civil war, plutarco not exiled, cardenas alive
+country_event = {
+	id = mexico.31
+	title = mexico.31.t
+	desc = mexico.31.d
+	picture = GFX_report_event_german_reichstag_bombed
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MEX
+		has_government = democratic
+		AND = {
+			NOT = { has_country_flag = plutarco_exiled }
+			has_country_flag = cardenas_alive
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = { # plutarco
+		name = mexico.31.a
+		trigger = { is_ai = no }
+		set_global_flag = mexico_civil_war
+		
+		hidden_effect = {
+			set_capital = 479
+		
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = democratic
+				size = 0.5
+				capital = 277
+				states = { 277 474 475 476 477 485 }
+			}
+			
+			random_other_country = {
+				limit = {
+					original_tag = MEX
+					has_government = democratic
+				}
+				set_equipment_fraction = 0.3
+				set_national_unity = 0.7
+				add_popularity = {
+					ideology = neutrality
+					popularity = -1
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.12
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.21
+				}
+			}
+			
+			news_event = { hours = 6 id = news.63 }
+			
+			set_equipment_fraction = 0.3
+			set_national_unity = 0.7
+			add_popularity = {
+				ideology = neutrality
+				popularity = 1
+			}
+		}
+		
+		custom_effect_tooltip = plutarco_chosen
+		
+	}
+	
+	
+	option = { # democrats
+		name = mexico.31.b
+		trigger = { is_ai = no }
+		set_global_flag = mexico_civil_war
+		
+		hidden_effect = {
+		
+			start_civil_war = {
+				ruling_party = democratic
+				ideology = neutrality
+				size = 0.5
+				capital = 479
+				states = { 478 479 480 481 482 483 484 }
+			}
+			
+			random_other_country = {
+				limit = {
+					original_tag = MEX
+					has_government = neutrality
+				}
+				set_equipment_fraction = 0.3
+				set_national_unity = 0.7
+				add_popularity = {
+					ideology = neutrality
+					popularity = 1
+				}
+			}
+			
+			news_event = { hours = 6 id = news.63 }
+			
+			set_equipment_fraction = 0.3
+			set_national_unity = 0.7	
+			add_popularity = {
+				ideology = neutrality
+				popularity = -1
+			}
+			
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.12
+			}
+			
+			add_popularity = {
+				ideology = communism
+				popularity = 0.21
+			}
+			
+		}
+		
+		custom_effect_tooltip = democrat_chosen
+		
+	}
+}
+
+### medium civil war, plutarco exiled, cardenas dead
+country_event = {
+	id = mexico.32
+	title = mexico.32.t
+	desc = mexico.32.d
+	picture = GFX_report_event_german_reichstag_bombed
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MEX
+		has_government = democratic
+		AND = {
+			has_country_flag = plutarco_exiled
+			has_country_flag = cardenas_dead
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = { # plutarco
+		name = mexico.32.a
+		trigger = { is_ai = no }
+		set_global_flag = mexico_civil_war
+		
+		hidden_effect = {
+			set_capital = 479
+		
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = democratic
+				size = 0.5
+				capital = 277
+				states = { 277 474 478 475 476 477 481 485 }
+			}
+			
+			random_other_country = {
+				limit = {
+					original_tag = MEX
+					has_government = democratic
+				}
+				set_equipment_fraction = 0.3
+				set_national_unity = 0.7
+				add_popularity = {
+					ideology = neutrality
+					popularity = -1
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.12
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.21
+				}
+			}
+			
+			news_event = { hours = 6 id = news.63 }
+			
+			set_equipment_fraction = 0.3
+			set_national_unity = 0.7
+			add_popularity = {
+				ideology = neutrality
+				popularity = 1
+			}
+		}
+		
+		custom_effect_tooltip = plutarco_chosen
+		
+	}
+	
+	
+	option = { # democrats
+		name = mexico.32.b
+		trigger = { is_ai = no }
+		set_global_flag = mexico_civil_war
+		
+		hidden_effect = {
+		
+			start_civil_war = {
+				ruling_party = democratic
+				ideology = neutrality
+				size = 0.5
+				capital = 479
+				states = { 479 480 482 483 484 }
+			}
+			
+			random_other_country = {
+				limit = {
+					original_tag = MEX
+					has_government = neutrality
+				}
+				set_equipment_fraction = 0.3
+				set_national_unity = 0.7
+				add_popularity = {
+					ideology = neutrality
+					popularity = 1
+				}
+			}
+			
+			news_event = { hours = 6 id = news.63 }
+			
+			set_equipment_fraction = 0.3
+			set_national_unity = 0.7	
+			add_popularity = {
+				ideology = neutrality
+				popularity = -1
+			}
+			
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.12
+			}
+			
+			add_popularity = {
+				ideology = communism
+				popularity = 0.21
+			}
+			
+		}
+		
+		custom_effect_tooltip = democrat_chosen
+		
+	}
+}
+
+###cedillo revolt### ### plutarco exiled, cardenas alive ###
+country_event = {
+	id = mexico.33
+	title = mexico.33.t
+	desc = mexico.33.d
+	picture = GFX_report_event_german_reichstag_bombed
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MEX
+		has_government = democratic
+		OR = {
+			AND = {
+				has_country_flag = plutarco_exiled
+				has_country_flag = cardenas_alive
+			}
+			AND = {
+				has_country_flag = nationalized_mexican_oil
+				has_country_flag = plutarco_exiled
+				date > 1938.1.1
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = { # plutarco
+		name = mexico.33.a
+		trigger = { is_ai = no }
+		set_global_flag = mexico_civil_war
+		
+		hidden_effect = {
+			set_capital = 479
+		
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = democratic
+				size = 0.8
+				capital = 277
+				states = { 277 474 478 475 476 477 480 481 482 483 484 485 }
+			}
+			
+			random_other_country = {
+				limit = {
+					original_tag = MEX
+					has_government = democratic
+				}
+				set_equipment_fraction = 0.3
+				set_national_unity = 0.7
+				add_popularity = {
+					ideology = neutrality
+					popularity = -1
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.12
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.21
+				}
+			}
+			
+			news_event = { hours = 6 id = news.63 }
+			
+			set_equipment_fraction = 0.3
+			set_national_unity = 0.7
+			add_popularity = {
+				ideology = neutrality
+				popularity = 1
+			}
+		}
+		
+		custom_effect_tooltip = plutarco_chosen
+		
+	}
+	
+	
+	option = { # democrats
+		name = mexico.33.b
+		trigger = { is_ai = no }
+		set_global_flag = mexico_civil_war
+		
+		hidden_effect = {
+		
+			start_civil_war = {
+				ruling_party = democratic
+				ideology = neutrality
+				size = 0.2
+				capital = 479
+				states = { 479 }
+			}
+			
+			random_other_country = {
+				limit = {
+					original_tag = MEX
+					has_government = neutrality
+				}
+				set_equipment_fraction = 0.3
+				set_national_unity = 0.7
+				add_popularity = {
+					ideology = neutrality
+					popularity = 1
+				}
+			}
+			
+			news_event = { hours = 6 id = news.63 }
+			
+			set_equipment_fraction = 0.3
+			set_national_unity = 0.7	
+			add_popularity = {
+				ideology = neutrality
+				popularity = -1
+			}
+			
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.12
+			}
+			
+			add_popularity = {
+				ideology = communism
+				popularity = 0.21
+			}
+			
+		}
+		
+		custom_effect_tooltip = democrat_chosen
+		
+	}
+}
+
+country_event = { ### demand american territories ###
+	id = mexico.34
+	title = mexico.34.t
+	desc = mexico.34.d
+	picture = GFX_report_event_hitler_parade
+	
+	is_triggered_only = yes
+	
+	option = { ### give up territories
+		name = mexico.34.a
+		ai_chance = {
+			base = 0
+		}
+		MEX = {
+			country_event = { hours = 2 id = mexico.35 }
+		}
+	}
+	
+	option = {
+		name = mexico.34.b
+		ai_chance = {
+			base = 10
+		}
+		MEX = { ### war with mexico
+			country_event = { hours = 2 id = mexico.36 }
+		}
+	}
+}
+
+country_event = { ### americans cede ###
+	id = mexico.35
+	title = mexico.35.t
+	desc = mexico.35.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.35.a
+		hidden_effect = {
+			374 = {
+				if = {
+					limit = { is_owned_by = USA }
+					add_core_of = MEX
+				}
+			}
+			375 = {
+				if = {
+					limit = { is_owned_by = USA }
+					add_core_of = MEX
+				}
+			}
+			376 = {
+				if = {
+					limit = { is_owned_by = USA }
+					add_core_of = MEX
+				}
+			}
+			377 = {
+				if = {
+					limit = { is_owned_by = USA }
+					add_core_of = MEX
+				}
+			}
+			378 = {
+				if = {
+					limit = { is_owned_by = USA }
+					add_core_of = MEX
+				}
+			}
+			379 = {
+				if = {
+					limit = { is_owned_by = USA }
+					add_core_of = MEX
+				}
+			}
+			380 = {
+				if = {
+					limit = { is_owned_by = USA }
+					add_core_of = MEX
+				}
+			}
+			382 = {
+				if = {
+					limit = { is_owned_by = USA }
+					add_core_of = MEX
+				}
+			}
+		}
+		MEX = {
+			transfer_state = 374
+			transfer_state = 375
+			transfer_state = 376
+			transfer_state = 377
+			transfer_state = 378
+			transfer_state = 379
+			transfer_state = 380
+			transfer_state = 382
+		}
+	}
+}
+
+country_event = { ### americans refuse ###
+	id = mexico.36
+	title = mexico.36.t
+	desc = mexico.36.d
+	picture = GFX_report_event_hitler_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.36.a
+		hidden_effect = {
+			374 = {
+				if = {
+					limit = { is_owned_by = USA }
+					add_core_of = MEX
+				}
+			}
+			375 = {
+				if = {
+					limit = { is_owned_by = USA }
+					add_core_of = MEX
+				}
+			}
+			376 = {
+				if = {
+					limit = { is_owned_by = USA }
+					add_core_of = MEX
+				}
+			}
+			377 = {
+				if = {
+					limit = { is_owned_by = USA }
+					add_core_of = MEX
+				}
+			}
+			378 = {
+				if = {
+					limit = { is_owned_by = USA }
+					add_core_of = MEX
+				}
+			}
+			379 = {
+				if = {
+					limit = { is_owned_by = USA }
+					add_core_of = MEX
+				}
+			}
+			380 = {
+				if = {
+					limit = { is_owned_by = USA }
+					add_core_of = MEX
+				}
+			}
+			382 = {
+				if = {
+					limit = { is_owned_by = USA }
+					add_core_of = MEX
+				}
+			}
+		}
+		create_wargoal = {
+			type = take_state_focus
+			target = USA
+		}
+	}
+}
+
+country_event = { ### exile plutarco ###
+	id = mexico.37
+	title = mexico.37.t
+	desc = mexico.37.d
+	picture = GFX_report_event_generic_research_lab
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.37.a
+		remove_ideas = maximato_1
+		set_country_flag = plutarco_exiled
+		hidden_effect = {
+			news_event = { id = news.331 }
+		}
+	}
+}
+
+country_event = { ### nationalize oil ###
+	id = mexico.38
+	title = mexico.38.t
+	desc = mexico.38.d
+	picture = GFX_report_event_generic_research_lab
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.38.a
+		add_timed_opinion_modifier = {
+			opinion_modifier = { target = MEX modifier = nationalize_oil }
+			days = 730
+		}
+		add_timed_opinion_modifier = {
+			opinion_modifier = { target = MEX modifier = embargo }
+			days = 730
+		}
+		#add_opinion_modifier = { target = MEX modifier = nationalize_oil }
+		#add_opinion_modifier = { target = MEX modifier = embargo }
+		set_country_flag = nationalized_mexican_oil
+	}
+}
+
+country_event = { ### central america ###
+	id = mexico.39
+	title = mexico.39.t
+	desc = mexico.39.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.39.a
+		hidden_effect = {
+			312 = {
+				if = {
+					limit = { is_owned_by = HON }
+					add_core_of = MEX
+				}
+			}
+			313 = {
+				if = {
+					limit = { is_owned_by = GUA }
+					add_core_of = MEX
+				}
+			}
+			314 = {
+				if = {
+					limit = { is_owned_by = ELS }
+					add_core_of = MEX
+				}
+			}
+			317 = {
+				if = {
+					limit = { is_owned_by = NIC }
+					add_core_of = MEX
+				}
+			}
+		}
+		create_wargoal = {
+			type = take_state_focus
+			target = GUA
+			target = HON
+			target = ELS
+			target = NIC
+		}
+	}
+}
+
+country_event = { ### asylum trotsky ###
+	id = mexico.40
+	title = mexico.40.t
+	desc = mexico.40.d
+	picture = GFX_report_event_generic_research_lab
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mexico.40.a
+		set_rule = { can_create_factions = yes }
+		add_ideas = MEX_leon_trotsky
+		hidden_effect = {
+			set_global_flag = safe_trotsky
+		}	
+	}
+}
+
+country_event = { ### U-boats attack ###
+	id = mexico.41
+	title = mexico.41.t
+	desc = mexico.41.d
+	picture = GFX_report_event_generic_research_lab
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = MEX
+		has_government = democratic
+		AND = {
+			has_global_flag = MEX_nazi_enemy
+			NOT = { has_war_with = GER }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = {
+		name = mexico.41.a
+		create_wargoal = {
+			type = topple_government
+			target = GER
+		}
+		hidden_effect = {
+			set_global_flag = MEX_german_attack
+		}
+	}
+	
+	option = {
+		name = mexico.41.b
+		add_national_unity = - 0.1
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.2
+		}
+		hidden_effect = {
+			set_country_flag = MEX_synarchist_rebels
+			set_country_flag = MEX_german_attack
+		}
+	}
+}
+
+
+### attempt on mexico president ###
+country_event = {
+	id = mexico.42
+	title = mexico.42.t
+	desc = mexico.42.d
+	picture = GFX_report_event_german_reichstag_gathering
+	
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = MEX_german_attack
+		has_country_flag = MEX_camacho_president
+		original_tag = MEX
+		has_war_with = GER
+		ruling_party = democratic
+		date > 1942.1.1
+	}
+	
+	
+	mean_time_to_happen = {
+		days = 150
+	}
+	
+	option = {
+		name = mexico.42.a
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = MEX_synarchist_rebels }
+				random_list = {
+					50 = { country_event = { hours = 6 id = mexico.43 } } # Conspiracy defeated, Cardenás dead
+					50 = { country_event = { hours = 6 id = mexico.44 } } # Conspiracy defeated, Cardenás survives
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = MEX_synarchist_rebels } }
+				random_list = {
+					13 = { country_event = { hours = 6 id = mexico.43 } } # Conspiracy defeated, Cardenás dead
+					87 = { country_event = { hours = 6 id = mexico.44 } } # Conspiracy defeated, Cardenás survives
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mexico.43
+	title = mexico.43.t
+	desc = mexico.43.d
+	picture = GFX_report_event_europe_funeral
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = { # Miguel Alemán
+		name = mexico.43.a
+		kill_country_leader = yes
+		set_country_flag  = camacho_dead
+		create_country_leader = {
+			name = "Miguel Alemán"
+			desc = "POLITICS_HEINRICH_HIMMLER_DESC"
+			picture = "MiguelMEX.dds"
+			expire = "1965.1.1"
+			ideology = liberalism
+			traits = {
+			}
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = news.28 }
+		}
+	}
+}
+
+# Conspiracy defeated, Camacho survives
+country_event = {
+	id = mexico.44
+	title = mexico.44.t
+	desc = mexico.44.d
+	picture = GFX_report_event_hitler_parade
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = mexico.44.a
+		set_country_flag = camacho_alive
+		hidden_effect = {
+			news_event = { hours = 6 id = news.30 }
+		}
+	}
+}
+
+# End of Civil War (democrats win)
+country_event = {
+	id = mexico.45
+	title = mexico.45.t
+	desc = mexico.45.d
+	picture = GFX_report_event_hitler_parade
+	
+	major = yes
+	
+	trigger = {
+		has_global_flag = mexico_civil_war
+		NOT = { has_global_flag = mcw_over }
+		MEX = { has_civil_war = no }
+		any_other_country = {
+			original_tag = MEX
+			has_government = democratic
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	immediate = {
+		set_global_flag = mdem_victory
+		set_global_flag = mcw_over
+	}
+	
+	option = {
+		name = mexico.45.a
+		hidden_effect = {
+			if = {
+				AND = {
+					limit = { date < 1940.7.7 }
+				}
+			}
+			random_other_country = {
+				limit = {
+					original_tag = MEX
+				}
+				set_politics = {
+					ruling_party = democratic
+					last_election = "1934.7.7"
+					election_frequency = 72
+					elections_allowed = yes
+				}
+			}
+			if = {
+				AND = {
+					limit = { date < 1946.7.7 }
+				}
+			}
+			random_other_country = {
+				limit = {
+					original_tag = MEX
+				}
+				set_politics = {
+					ruling_party = democratic
+					last_election = "1940.7.7"
+					election_frequency = 72
+					elections_allowed = yes
+				}
+			}
+		}
+	}
+}
+
+# End of Civil War (Plutarco win)
+#news_event = {
+#	id = mexico.46
+#	title = mexico.46.t
+#	desc = mexico.46.d
+#	picture = GFX_news_event_034
+#	
+#	major = yes
+#	
+#	trigger = {
+#		has_global_flag = mexico_civil_war
+#		NOT = { has_global_flag = mcw_over }
+#		MEX = { has_civil_war = no }
+#		any_other_country = {
+#			original_tag = MEX
+#			NOT = { has_government = democratic }
+#		}
+#		all_country = {
+#			OR = {
+#				NOT = { original_tag = MEX }
+#				NOT = { has_government = democratic }
+#			}
+#		}
+#	}
+#	
+#	mean_time_to_happen = {
+#		days = 2
+#	}
+#	
+#	immediate = {
+#		set_global_flag = mneu_victory
+#		set_global_flag = mcw_over
+#	}
+#	
+#	option = {
+#		name = mexico.46.a
+#		trigger = {
+#			NOT = { original_tag = MEX }
+#		}
+#	}
+#
+#}
+
+#End of the spanish civil war - volunteers return
+#mexico 47
