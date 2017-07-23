@@ -65,7 +65,7 @@ country_event = {
 	}
 }
 
-# monarchist Coup d'état
+# monarchist Coup d'Ã©tat
 country_event = {
 	id = political.52
 	title = political.52.t
