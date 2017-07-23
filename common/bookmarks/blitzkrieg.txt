@@ -245,6 +245,33 @@ bookmarks = {
 				YUG_the_ik_3
 			}
 		}
+		"MEX"={
+			minor = yes
+			history = "MEX_BLITZKRIEG_DESC"
+			ideology = democratic
+			ideas = {
+				maximato
+				segregation
+			}
+			focuses = {
+				MEX_anti_imperialism_policy
+				MEX_prepare_for_the_reconquista
+				MEX_exile_el_jefe
+			}
+		}
+		"AUS"={
+			minor = yes
+			history = "AUS_GATHERING_BLITZ_DESC"
+			ideology = monarchy
+			ideas = {
+				sour_loser
+			}
+			focuses = {
+				AUS_start_rebuild_austria-hungary
+				AUS_fund_monarchy_party
+				AUS_mit_mil
+			}
+		}
 		
 
 		effect = {
